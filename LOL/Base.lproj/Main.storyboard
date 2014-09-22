@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="s8g-FT-35w">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -129,7 +130,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ce2-ZB-gUw">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ce2-ZB-gUw">
                                 <rect key="frame" x="0.0" y="70" width="320" height="449"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="cjf-bY-ZoY">
                                     <size key="itemSize" width="73" height="95"/>
@@ -151,6 +152,18 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ce2-ZB-gUw" secondAttribute="trailing" constant="-16" id="EIb-0N-omd"/>
+                            <constraint firstItem="Ce2-ZB-gUw" firstAttribute="bottom" secondItem="NsY-PF-EyY" secondAttribute="top" id="Ph3-iQ-h0e"/>
+                            <constraint firstItem="Ce2-ZB-gUw" firstAttribute="leading" secondItem="UO0-GH-DwW" secondAttribute="leadingMargin" constant="-16" id="Twd-t5-8JA"/>
+                            <constraint firstItem="Ce2-ZB-gUw" firstAttribute="trailing" secondItem="NsY-PF-EyY" secondAttribute="trailing" id="bkP-Ec-3iN"/>
+                            <constraint firstItem="Ce2-ZB-gUw" firstAttribute="top" secondItem="1fM-X3-ZVD" secondAttribute="bottom" constant="6" id="yHp-YM-Vm7"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bkP-Ec-3iN"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="英雄攻略" id="SyK-zn-d3i"/>
                     <connections>
@@ -174,13 +187,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JoT-8U-zcO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JoT-8U-zcO">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JoT-8U-zcO" firstAttribute="leading" secondItem="3gA-wd-yPz" secondAttribute="leadingMargin" constant="-16" id="7fK-Vu-Vfr"/>
+                            <constraint firstItem="JoT-8U-zcO" firstAttribute="top" secondItem="3gA-wd-yPz" secondAttribute="topMargin" id="cuw-nt-ZLs"/>
+                            <constraint firstAttribute="bottom" secondItem="JoT-8U-zcO" secondAttribute="bottom" id="lxw-ZA-VeL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JoT-8U-zcO" secondAttribute="trailing" constant="-16" id="wZt-1m-01h"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="英雄详情" id="1Eq-K5-hAB"/>
                     <connections>
