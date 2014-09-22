@@ -32,10 +32,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    //GetData
-    [self getHeroList];
-    [self getItemList];
-    [self getRuneList];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        //GetData
+        [self getHeroList];
+        [self getItemList];
+        [self getRuneList];
+    });
+    
     
     
     return YES;
@@ -117,8 +120,8 @@
     itemIDList = [[NSMutableDictionary alloc]init];
     
     //getItemList
-    [itemIDList addEntriesFromDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"HeroIDList"]];
-    [itemList addObjectsFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"HeroList"]];
+    [itemIDList addEntriesFromDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"ItemIDList"]];
+    [itemList addObjectsFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"ItemList"]];
     
     //getFromNetwork
     NSString *url = [NSString stringWithFormat:@"%@?method=getItem",[Default server]];
@@ -132,11 +135,11 @@
             for (int i=0; i<[itemList count]; i++) {
                 NSString *id = [[itemList objectAtIndex:i] objectForKey:@"id"];
                 [itemIDList setObject:[NSString stringWithFormat:@"%d",i] forKey:id];
-                [[NSUserDefaults standardUserDefaults] setObject:itemIDList forKey:@"ItemIDList"];
-                [[NSUserDefaults standardUserDefaults] setObject:itemList forKey:@"ItemList"];
-                [[NSUserDefaults standardUserDefaults] synchronize];
+                
             }
-            
+            [[NSUserDefaults standardUserDefaults] setObject:itemIDList forKey:@"ItemIDList"];
+            [[NSUserDefaults standardUserDefaults] setObject:itemList forKey:@"ItemList"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
         });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failure: %@", error);
@@ -165,11 +168,10 @@
             for (int i=0; i<[runeList count]; i++) {
                 NSString *id = [[runeList objectAtIndex:i] objectForKey:@"id"];
                 [runeIDList setObject:[NSString stringWithFormat:@"%d",i] forKey:id];
-                [[NSUserDefaults standardUserDefaults] setObject:runeIDList forKey:@"ItemIDList"];
-                [[NSUserDefaults standardUserDefaults] setObject:runeList forKey:@"ItemList"];
-                [[NSUserDefaults standardUserDefaults] synchronize];
             }
-            
+            [[NSUserDefaults standardUserDefaults] setObject:runeIDList forKey:@"RuneIDList"];
+            [[NSUserDefaults standardUserDefaults] setObject:runeList forKey:@"RuneList"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
         });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failure: %@", error);

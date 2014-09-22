@@ -8,7 +8,7 @@
 
 #import "WebViewController.h"
 
-@interface WebViewController ()<UIWebViewDelegate>
+@interface WebViewController ()//<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
@@ -21,34 +21,37 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setWebUrl:(NSString *)webUrl
-{
-    _webUrl = webUrl;
-    
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_webUrl]]];
-}
+//- (void)setWebUrl:(NSString *)webUrl
+//{
+//    _webUrl = webUrl;
+//    
+////    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_webUrl]]];
+//}
 
 - (void)viewDidLoad
 {
+//    NSLog(@"jz");
+
     [super viewDidLoad];
-    self.webView.delegate = self;
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_webUrl]]];
+    NSLog(@"jiazai");
+//    self.webView.delegate = self;
+//    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_webUrl]]];
 
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
-    NSLog(@"开始加载");
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    NSLog(@"加载完成");
-}
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
-    NSLog(@"加载失败，error:%@",error);
-}
-
+//- (void)webViewDidStartLoad:(UIWebView *)webView
+//{
+//    NSLog(@"开始加载");
+//}
+//
+//- (void)webViewDidFinishLoad:(UIWebView *)webView
+//{
+//    NSLog(@"加载完成");
+//}
+//- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+//{
+//    NSLog(@"加载失败，error:%@",error);
+//}
+//
 
 @end

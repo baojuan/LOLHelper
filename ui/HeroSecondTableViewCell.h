@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TechButton.h"
-
+#import "LineSpaceLabel.h"
 @protocol HeroSecondTableViewCellDelegate <NSObject>
 
 - (void)techButtonClick:(NSInteger)number;
@@ -21,7 +21,7 @@
 - (IBAction)techButtonClick:(UIButton *)sender;
 - (void)insertIntoData:(NSDictionary *)dict selected:(NSInteger)number;
 @property (weak, nonatomic) IBOutlet UILabel *techTitleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet LineSpaceLabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wasteLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIView *contentBackgroundView;

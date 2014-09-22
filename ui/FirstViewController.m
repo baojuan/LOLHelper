@@ -69,14 +69,14 @@
         cell.separatorInset = UIEdgeInsetsMake(0, 5, 0, 5);
     }
     NSDictionary *dict = [_dataArray objectAtIndex:indexPath.row];
-//    if ([[dict objectForKey:@"image"] length] > 0) {
-//        [cell haveImage:YES];
-//        [cell.smallImageView setImageWithURL:[NSURL URLWithString:[dict objectForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"small_image_loading"]];
-//    }
-//    else
-//    {
-//        [cell haveImage:NO];
-//    }
+    if ([[dict objectForKey:@"image"] length] > 0) {
+        [cell haveImage:YES];
+        [cell.smallImageView setImageWithURL:[NSURL URLWithString:[dict objectForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"small_image_loading"]];
+    }
+    else
+    {
+        [cell haveImage:NO];
+    }
     
     cell.titleLabel.text = [dict objectForKey:@"title"];
     cell.excerptLabel.text = [dict objectForKey:@"excerpt"];

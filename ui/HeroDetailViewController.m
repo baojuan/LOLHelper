@@ -12,8 +12,9 @@
 #import "HeroSecondTableViewCell.h"
 #import "Default.h"
 #import "AttributeTableViewCell.h"
+#import "ContentTableViewCell.h"
 
-@interface HeroDetailViewController ()<UITableViewDataSource, UITableViewDelegate,HeroSecondTableViewCellDelegate>
+@interface HeroDetailViewController ()<UITableViewDataSource, UITableViewDelegate,HeroSecondTableViewCellDelegate,ContentTableViewCellDelegate>
 @property (nonatomic, copy) NSDictionary *dataDict;
 @end
 
@@ -81,7 +82,7 @@
         return cell;
     }
     if (indexPath.row == 4) {
-        UITableViewCell *cell = [self contentCell];
+//        UITableViewCell *cell = [self contentCell];
         NSString *string = _dataDict[@"exp_use"];
 //        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
 //        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -91,7 +92,11 @@
 //        
 //        cell.textLabel.attributedText = attributedString;
 //        [cell.textLabel sizeToFit];
-        cell.textLabel.text = string;
+//        cell.textLabel.text = string;
+        ContentTableViewCell *cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exp_use"];
+        cell.delegate = self;
+        [cell insertIntoData:string];
+        
         return cell;
     }
     
@@ -101,8 +106,13 @@
         return cell;
     }
     if (indexPath.row == 6) {
-        UITableViewCell *cell = [self contentCell];
-        cell.textLabel.text = _dataDict[@"exp_vs"];
+//        UITableViewCell *cell = [self contentCell];
+        NSString *string = _dataDict[@"exp_vs"];
+
+        ContentTableViewCell *cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exp_vs"];
+        cell.delegate = self;
+        [cell insertIntoData:string];
+//        cell.textLabel.text = _dataDict[@"exp_vs"];
         return cell;
     }
     if (indexPath.row == 7) {
@@ -121,8 +131,14 @@
         return cell;
     }
     if (indexPath.row == 10) {
-        UITableViewCell *cell = [self contentCell];
-        cell.textLabel.text = _dataDict[@"story"];
+//        UITableViewCell *cell = [self contentCell];
+//        cell.textLabel.text = _dataDict[@"story"];
+        
+        NSString *string = _dataDict[@"story"];
+        
+        ContentTableViewCell *cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"story"];
+        cell.delegate = self;
+        [cell insertIntoData:string];
         return cell;
     }
 
@@ -136,7 +152,9 @@
 - (UITableViewCell *)titleCell
 {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [Default colorWithR:210 withG:210 withB:210];
+    cell.contentView.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [Default colorWithR:102 withG:102 withB:102];
     cell.textLabel.font = [UIFont systemFontOfSize:13];
     return cell;
@@ -178,14 +196,20 @@
     }
     if (indexPath.row == 4) {
         NSString *string = _dataDict[@"exp_use"];
-        return [self contentCellHeight:string];
+        ContentTableViewCell *cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
+        ;
+        return [cell.label insertIntoContentWithContent:string] + 20;
+//        return [self contentCellHeight:string];
     }
     if (indexPath.row == 5) {
         return 28;
     }
     if (indexPath.row == 6) {
         NSString *string = _dataDict[@"exp_vs"];
-        return [self contentCellHeight:string];
+        ContentTableViewCell *cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
+        ;
+        return [cell.label insertIntoContentWithContent:string] + 20;
+//        return [self contentCellHeight:string];
     }
     
     if (indexPath.row == 7) {
@@ -199,9 +223,17 @@
     }
     if (indexPath.row == 10) {
         NSString *string = _dataDict[@"story"];
-        return [self contentCellHeight:string];
+        ContentTableViewCell *cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
+        ;
+        return [cell.label insertIntoContentWithContent:string] + 20;
+//        return [self contentCellHeight:string];
     }
     return 0;
+}
+
+- (void)cellHeightCalculatedToRefreshCell
+{
+//    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:4 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (CGFloat)contentCellHeight:(NSString *)string

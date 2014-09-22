@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BE2711419CFD7620012F25C /* LineSpaceLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2711319CFD7620012F25C /* LineSpaceLabel.m */; };
+		5BE2711719CFD93E0012F25C /* ContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2711619CFD93E0012F25C /* ContentTableViewCell.m */; };
 		BF1FE78719CE86CE002B2C63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1FE78619CE86CE002B2C63 /* main.m */; };
 		BF1FE78A19CE86CE002B2C63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1FE78919CE86CE002B2C63 /* AppDelegate.m */; };
 		BF1FE79019CE86CE002B2C63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1FE78E19CE86CE002B2C63 /* Main.storyboard */; };
@@ -100,6 +102,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5BE2711219CFD7620012F25C /* LineSpaceLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSpaceLabel.h; sourceTree = "<group>"; };
+		5BE2711319CFD7620012F25C /* LineSpaceLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineSpaceLabel.m; sourceTree = "<group>"; };
+		5BE2711519CFD93E0012F25C /* ContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTableViewCell.h; sourceTree = "<group>"; };
+		5BE2711619CFD93E0012F25C /* ContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTableViewCell.m; sourceTree = "<group>"; };
 		BF1FE78119CE86CE002B2C63 /* LOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1FE78519CE86CE002B2C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1FE78619CE86CE002B2C63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -523,6 +529,8 @@
 				BF1FE87919CED973002B2C63 /* ColorNumberView.m */,
 				BF1FE88119CF09FE002B2C63 /* TechButton.h */,
 				BF1FE88219CF09FE002B2C63 /* TechButton.m */,
+				5BE2711219CFD7620012F25C /* LineSpaceLabel.h */,
+				5BE2711319CFD7620012F25C /* LineSpaceLabel.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -565,6 +573,8 @@
 				BF1FE88919CF2609002B2C63 /* AttributeTableViewCell.h */,
 				BF1FE88A19CF2609002B2C63 /* AttributeTableViewCell.m */,
 				BF1FE88B19CF2609002B2C63 /* AttributeTableViewCell.xib */,
+				5BE2711519CFD93E0012F25C /* ContentTableViewCell.h */,
+				5BE2711619CFD93E0012F25C /* ContentTableViewCell.m */,
 			);
 			name = heroCell;
 			sourceTree = "<group>";
@@ -714,8 +724,10 @@
 				BF1FE7F619CE9068002B2C63 /* AFURLResponseSerialization.m in Sources */,
 				BF1FE78A19CE86CE002B2C63 /* AppDelegate.m in Sources */,
 				BF1FE7F119CE9068002B2C63 /* AFHTTPSessionManager.m in Sources */,
+				5BE2711419CFD7620012F25C /* LineSpaceLabel.m in Sources */,
 				BF1FE7FF19CE9068002B2C63 /* NSData+ImageContentType.m in Sources */,
 				BF1FE7FD19CE9068002B2C63 /* FMResultSet.m in Sources */,
+				5BE2711719CFD93E0012F25C /* ContentTableViewCell.m in Sources */,
 				BF1FE85419CE9F50002B2C63 /* FirstTableViewCell.m in Sources */,
 				BF1FE7F019CE9068002B2C63 /* AFHTTPRequestOperationManager.m in Sources */,
 				BF1FE80519CE9068002B2C63 /* SDWebImageManager.m in Sources */,
@@ -930,6 +942,7 @@
 				BF1FE7A619CE86CE002B2C63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF1FE7A719CE86CE002B2C63 /* Build configuration list for PBXNativeTarget "LOLTests" */ = {
 			isa = XCConfigurationList;
@@ -938,6 +951,7 @@
 				BF1FE7A919CE86CE002B2C63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -59,13 +58,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你是哪只(A)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HGF-g6-qcV">
-                                <rect key="frame" x="8" y="9" width="284" height="21"/>
+                                <rect key="frame" x="8" y="5" width="284" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="激活：啦啦啦啦啦啦啦，今天天气好晴朗，不想接电话" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VM7-Qk-uTl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="激活：啦啦啦啦啦啦啦，今天天气好晴朗，不想接电话" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VM7-Qk-uTl" customClass="LineSpaceLabel">
                                 <rect key="frame" x="8" y="30" width="284" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -94,7 +93,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentBackgroundView" destination="Urv-J1-kuZ" id="k0a-gA-j8f"/>
-                <outlet property="detailLabel" destination="VM7-Qk-uTl" id="5Mp-aW-Z8T"/>
+                <outlet property="detailLabel" destination="VM7-Qk-uTl" id="9nu-v8-CDS"/>
                 <outlet property="techTitleLabel" destination="HGF-g6-qcV" id="Jvb-Ky-iVv"/>
                 <outlet property="timeLabel" destination="iQ1-MJ-TnN" id="LVx-XA-q8R"/>
                 <outlet property="wasteLabel" destination="IJT-X3-sF4" id="5WQ-Dg-lnV"/>

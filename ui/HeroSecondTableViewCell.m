@@ -13,6 +13,7 @@
     NSArray *array;
     NSString *string;
     NSInteger selectedNumber;
+    CGFloat heightContent;
 }
 
 - (void)awakeFromNib {
@@ -64,7 +65,8 @@
     NSDictionary *dict = array[number];
     self.techTitleLabel.text = dict[@"name"];
     
-    self.detailLabel.text = dict[@"text"];
+    heightContent = [self.detailLabel insertIntoContentWithContent:[NSString stringWithFormat:@"\n%@",dict[@"text"]]];
+
     string = dict[@"text"];
     if ([dict[@"mp"] length] > 0) {
         self.wasteLabel.text = [NSString stringWithFormat:@"技能消耗：%@",dict[@"mp"]];
@@ -89,15 +91,18 @@
 //    CGSize size = [string sizeWithFont:self.detailLabel.font constrainedToSize:CGSizeMake(284, 5000)];
     
     
-    CGFloat heightString = 0;
-    NSArray *array = [string componentsSeparatedByString:@"\n"];
-    for (NSString *ss in array) {
-        CGSize size = [ss sizeWithFont:self.detailLabel.font constrainedToSize:CGSizeMake(284, 500)];
-        heightString += size.height;
-    }
+//    CGFloat heightString = 0;
+//    NSArray *array = [string componentsSeparatedByString:@"\n"];
+//    for (NSString *ss in array) {
+//        CGSize size = [ss sizeWithFont:self.detailLabel.font constrainedToSize:CGSizeMake(284, 500)];
+//        heightString += size.height;
+//    }
+//    detailFrame.size.height = heightString;
 
     
-    detailFrame.size.height = heightString;
+    detailFrame.size.height = heightContent - 10;
+    
+    
     self.detailLabel.frame = detailFrame;
     self.detailLabel.text = string;
     
@@ -132,16 +137,10 @@
 {
 //    CGSize size = [string sizeWithFont:self.detailLabel.font constrainedToSize:CGSizeMake(284, 500)];
     
-    CGFloat heightString = 0;
-    NSArray *array = [string componentsSeparatedByString:@"\n"];
+
     
     
-    for (NSString *ss in array) {
-        CGSize size = [ss sizeWithFont:self.detailLabel.font constrainedToSize:CGSizeMake(284, 500)];
-        heightString += size.height;
-    }
-    
-    CGFloat height = 182 - 18 + heightString;
+    CGFloat height = 182 - 18 + heightContent;
     if ([self.timeLabel.text length] == 0) {
         height -= 21;
     }
