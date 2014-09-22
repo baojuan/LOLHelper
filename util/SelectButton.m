@@ -24,7 +24,7 @@
     if (self) {
         self.title = title;
         [self setImage:[UIImage imageNamed:@"underLine"] forState:UIControlStateSelected];
-        [self setImage:nil forState:UIControlStateNormal];
+        [self setImage:[UIImage imageNamed:@"cleanImage"] forState:UIControlStateNormal];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self setTitleColor:[Default colorWithR:95 withG:95 withB:95] forState:UIControlStateNormal];
         self.titleLabel.font = [UIFont systemFontOfSize:15];

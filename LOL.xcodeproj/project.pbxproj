@@ -89,6 +89,15 @@
 		BF1FE88519CF0A6F002B2C63 /* techBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF1FE88419CF0A6F002B2C63 /* techBackground@2x.png */; };
 		BF1FE88C19CF2609002B2C63 /* AttributeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1FE88A19CF2609002B2C63 /* AttributeTableViewCell.m */; };
 		BF1FE88D19CF2609002B2C63 /* AttributeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1FE88B19CF2609002B2C63 /* AttributeTableViewCell.xib */; };
+		BFFAF46C19D055A300934FF2 /* HeroSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFAF46B19D055A300934FF2 /* HeroSegmentControl.m */; };
+		BFFAF46F19D06FF100934FF2 /* HeroTableViewHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFAF46E19D06FF100934FF2 /* HeroTableViewHeadView.m */; };
+		BFFAF47119D0700700934FF2 /* HeroTableViewHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFAF47019D0700700934FF2 /* HeroTableViewHeadView.xib */; };
+		BFFAF47519D0742300934FF2 /* HeroPlayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFAF47319D0742300934FF2 /* HeroPlayTableViewCell.m */; };
+		BFFAF47619D0742300934FF2 /* HeroPlayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFAF47419D0742300934FF2 /* HeroPlayTableViewCell.xib */; };
+		BFFAF47919D0785B00934FF2 /* RuneLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFAF47819D0785B00934FF2 /* RuneLabel.m */; };
+		BFFAF47D19D079E600934FF2 /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFAF47A19D079E600934FF2 /* blue@2x.png */; };
+		BFFAF47E19D079E600934FF2 /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFAF47B19D079E600934FF2 /* green@2x.png */; };
+		BFFAF47F19D079E600934FF2 /* red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFAF47C19D079E600934FF2 /* red@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +248,19 @@
 		BF1FE88919CF2609002B2C63 /* AttributeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeTableViewCell.h; sourceTree = "<group>"; };
 		BF1FE88A19CF2609002B2C63 /* AttributeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeTableViewCell.m; sourceTree = "<group>"; };
 		BF1FE88B19CF2609002B2C63 /* AttributeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttributeTableViewCell.xib; sourceTree = "<group>"; };
+		BFFAF46A19D055A300934FF2 /* HeroSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroSegmentControl.h; sourceTree = "<group>"; };
+		BFFAF46B19D055A300934FF2 /* HeroSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroSegmentControl.m; sourceTree = "<group>"; };
+		BFFAF46D19D06FF100934FF2 /* HeroTableViewHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroTableViewHeadView.h; sourceTree = "<group>"; };
+		BFFAF46E19D06FF100934FF2 /* HeroTableViewHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroTableViewHeadView.m; sourceTree = "<group>"; };
+		BFFAF47019D0700700934FF2 /* HeroTableViewHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroTableViewHeadView.xib; sourceTree = "<group>"; };
+		BFFAF47219D0742300934FF2 /* HeroPlayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroPlayTableViewCell.h; sourceTree = "<group>"; };
+		BFFAF47319D0742300934FF2 /* HeroPlayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroPlayTableViewCell.m; sourceTree = "<group>"; };
+		BFFAF47419D0742300934FF2 /* HeroPlayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroPlayTableViewCell.xib; sourceTree = "<group>"; };
+		BFFAF47719D0785B00934FF2 /* RuneLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuneLabel.h; sourceTree = "<group>"; };
+		BFFAF47819D0785B00934FF2 /* RuneLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuneLabel.m; sourceTree = "<group>"; };
+		BFFAF47A19D079E600934FF2 /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
+		BFFAF47B19D079E600934FF2 /* green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green@2x.png"; sourceTree = "<group>"; };
+		BFFAF47C19D079E600934FF2 /* red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -495,6 +517,7 @@
 		BF1FE81E19CE9076002B2C63 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				BF1FE87B19CEDBD6002B2C63 /* heroCell */,
 				BF1FE82B19CE90B4002B2C63 /* FirstViewController.h */,
 				BF1FE82C19CE90B4002B2C63 /* FirstViewController.m */,
 				BF1FE82E19CE90E3002B2C63 /* SecondViewController.h */,
@@ -509,7 +532,9 @@
 				BF1FE86319CEB30E002B2C63 /* SecondCollectionViewCell.xib */,
 				BF1FE86919CECDEE002B2C63 /* HeroDetailViewController.h */,
 				BF1FE86A19CECDEE002B2C63 /* HeroDetailViewController.m */,
-				BF1FE87B19CEDBD6002B2C63 /* heroCell */,
+				BFFAF46D19D06FF100934FF2 /* HeroTableViewHeadView.h */,
+				BFFAF46E19D06FF100934FF2 /* HeroTableViewHeadView.m */,
+				BFFAF47019D0700700934FF2 /* HeroTableViewHeadView.xib */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -531,6 +556,10 @@
 				BF1FE88219CF09FE002B2C63 /* TechButton.m */,
 				5BE2711219CFD7620012F25C /* LineSpaceLabel.h */,
 				5BE2711319CFD7620012F25C /* LineSpaceLabel.m */,
+				BFFAF46A19D055A300934FF2 /* HeroSegmentControl.h */,
+				BFFAF46B19D055A300934FF2 /* HeroSegmentControl.m */,
+				BFFAF47719D0785B00934FF2 /* RuneLabel.h */,
+				BFFAF47819D0785B00934FF2 /* RuneLabel.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -554,6 +583,9 @@
 		BF1FE87119CED5CD002B2C63 /* heroInfo */ = {
 			isa = PBXGroup;
 			children = (
+				BFFAF47A19D079E600934FF2 /* blue@2x.png */,
+				BFFAF47B19D079E600934FF2 /* green@2x.png */,
+				BFFAF47C19D079E600934FF2 /* red@2x.png */,
 				BF1FE88419CF0A6F002B2C63 /* techBackground@2x.png */,
 				BF1FE87219CED5CD002B2C63 /* coin@2x.png */,
 				BF1FE87319CED5CD002B2C63 /* money@2x.png */,
@@ -575,6 +607,9 @@
 				BF1FE88B19CF2609002B2C63 /* AttributeTableViewCell.xib */,
 				5BE2711519CFD93E0012F25C /* ContentTableViewCell.h */,
 				5BE2711619CFD93E0012F25C /* ContentTableViewCell.m */,
+				BFFAF47219D0742300934FF2 /* HeroPlayTableViewCell.h */,
+				BFFAF47319D0742300934FF2 /* HeroPlayTableViewCell.m */,
+				BFFAF47419D0742300934FF2 /* HeroPlayTableViewCell.xib */,
 			);
 			name = heroCell;
 			sourceTree = "<group>";
@@ -660,15 +695,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF1FE82619CE9076002B2C63 /* hero@2x.png in Resources */,
+				BFFAF47619D0742300934FF2 /* HeroPlayTableViewCell.xib in Resources */,
 				BF1FE87519CED5CD002B2C63 /* coin@2x.png in Resources */,
+				BFFAF47D19D079E600934FF2 /* blue@2x.png in Resources */,
 				BF1FE82219CE9076002B2C63 /* btn_back@2x.png in Resources */,
 				BF1FE82119CE9076002B2C63 /* banner_loading@2x.png in Resources */,
 				BF1FE82319CE9076002B2C63 /* hero_icon_loading@2x.png in Resources */,
+				BFFAF47119D0700700934FF2 /* HeroTableViewHeadView.xib in Resources */,
 				BF1FE87019CED395002B2C63 /* HeroFirstTableViewCell.xib in Resources */,
 				BF1FE82019CE9076002B2C63 /* cleanImage@2x.png in Resources */,
 				BF1FE82819CE9076002B2C63 /* news@2x.png in Resources */,
 				BF1FE79019CE86CE002B2C63 /* Main.storyboard in Resources */,
 				BF1FE79519CE86CE002B2C63 /* LaunchScreen.xib in Resources */,
+				BFFAF47F19D079E600934FF2 /* red@2x.png in Resources */,
 				BF1FE87719CED5CD002B2C63 /* search@2x.png in Resources */,
 				BF1FE85519CE9F50002B2C63 /* FirstTableViewCell.xib in Resources */,
 				BF1FE79219CE86CE002B2C63 /* Images.xcassets in Resources */,
@@ -676,6 +715,7 @@
 				BF1FE82519CE9076002B2C63 /* underLine@2x.png in Resources */,
 				BF1FE82719CE9076002B2C63 /* hero_press@2x.png in Resources */,
 				BF1FE82919CE9076002B2C63 /* news_press@2x.png in Resources */,
+				BFFAF47E19D079E600934FF2 /* green@2x.png in Resources */,
 				BF1FE82419CE9076002B2C63 /* small_image_loading@2x.png in Resources */,
 				BF1FE88D19CF2609002B2C63 /* AttributeTableViewCell.xib in Resources */,
 				BF1FE86519CEB30E002B2C63 /* SecondCollectionViewCell.xib in Resources */,
@@ -719,6 +759,7 @@
 				BF1FE84F19CE9C0B002B2C63 /* Default.m in Sources */,
 				BF1FE86B19CECDEE002B2C63 /* HeroDetailViewController.m in Sources */,
 				BF1FE7F719CE9068002B2C63 /* AFURLSessionManager.m in Sources */,
+				BFFAF47519D0742300934FF2 /* HeroPlayTableViewCell.m in Sources */,
 				BF1FE7FC19CE9068002B2C63 /* FMDatabaseQueue.m in Sources */,
 				BF1FE87A19CED973002B2C63 /* ColorNumberView.m in Sources */,
 				BF1FE7F619CE9068002B2C63 /* AFURLResponseSerialization.m in Sources */,
@@ -727,9 +768,11 @@
 				5BE2711419CFD7620012F25C /* LineSpaceLabel.m in Sources */,
 				BF1FE7FF19CE9068002B2C63 /* NSData+ImageContentType.m in Sources */,
 				BF1FE7FD19CE9068002B2C63 /* FMResultSet.m in Sources */,
+				BFFAF46C19D055A300934FF2 /* HeroSegmentControl.m in Sources */,
 				5BE2711719CFD93E0012F25C /* ContentTableViewCell.m in Sources */,
 				BF1FE85419CE9F50002B2C63 /* FirstTableViewCell.m in Sources */,
 				BF1FE7F019CE9068002B2C63 /* AFHTTPRequestOperationManager.m in Sources */,
+				BFFAF47919D0785B00934FF2 /* RuneLabel.m in Sources */,
 				BF1FE80519CE9068002B2C63 /* SDWebImageManager.m in Sources */,
 				BF1FE83319CE9155002B2C63 /* pinyin.c in Sources */,
 				BF1FE80219CE9068002B2C63 /* SDWebImageDecoder.m in Sources */,
@@ -737,6 +780,7 @@
 				BF1FE80419CE9068002B2C63 /* SDWebImageDownloaderOperation.m in Sources */,
 				BF1FE7F219CE9068002B2C63 /* AFNetworkReachabilityManager.m in Sources */,
 				BF1FE78719CE86CE002B2C63 /* main.m in Sources */,
+				BFFAF46F19D06FF100934FF2 /* HeroTableViewHeadView.m in Sources */,
 				BF1FE7FE19CE9068002B2C63 /* MKAnnotationView+WebCache.m in Sources */,
 				BF1FE84919CE9551002B2C63 /* LTabbarItem.m in Sources */,
 				BF1FE80119CE9068002B2C63 /* SDWebImageCompat.m in Sources */,
