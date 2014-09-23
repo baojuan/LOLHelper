@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5BE2711419CFD7620012F25C /* LineSpaceLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2711319CFD7620012F25C /* LineSpaceLabel.m */; };
 		5BE2711719CFD93E0012F25C /* ContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2711619CFD93E0012F25C /* ContentTableViewCell.m */; };
+		5BE2711919D123DB0012F25C /* RuneLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE2711819D123DB0012F25C /* RuneLabel.xib */; };
 		BF1FE78719CE86CE002B2C63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1FE78619CE86CE002B2C63 /* main.m */; };
 		BF1FE78A19CE86CE002B2C63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1FE78919CE86CE002B2C63 /* AppDelegate.m */; };
 		BF1FE79019CE86CE002B2C63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1FE78E19CE86CE002B2C63 /* Main.storyboard */; };
@@ -115,6 +116,7 @@
 		5BE2711319CFD7620012F25C /* LineSpaceLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineSpaceLabel.m; sourceTree = "<group>"; };
 		5BE2711519CFD93E0012F25C /* ContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTableViewCell.h; sourceTree = "<group>"; };
 		5BE2711619CFD93E0012F25C /* ContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTableViewCell.m; sourceTree = "<group>"; };
+		5BE2711819D123DB0012F25C /* RuneLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RuneLabel.xib; sourceTree = "<group>"; };
 		BF1FE78119CE86CE002B2C63 /* LOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1FE78519CE86CE002B2C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1FE78619CE86CE002B2C63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				BFFAF46B19D055A300934FF2 /* HeroSegmentControl.m */,
 				BFFAF47719D0785B00934FF2 /* RuneLabel.h */,
 				BFFAF47819D0785B00934FF2 /* RuneLabel.m */,
+				5BE2711819D123DB0012F25C /* RuneLabel.xib */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BE2711919D123DB0012F25C /* RuneLabel.xib in Resources */,
 				BF1FE82619CE9076002B2C63 /* hero@2x.png in Resources */,
 				BFFAF47619D0742300934FF2 /* HeroPlayTableViewCell.xib in Resources */,
 				BF1FE87519CED5CD002B2C63 /* coin@2x.png in Resources */,

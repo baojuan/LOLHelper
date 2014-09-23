@@ -55,7 +55,7 @@
                         </connections>
                     </view>
                     <view contentMode="scaleToFill" id="Urv-J1-kuZ">
-                        <rect key="frame" x="10" y="65" width="300" height="100"/>
+                        <rect key="frame" x="10" y="65" width="300" height="105"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你是哪只(A)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HGF-g6-qcV">
@@ -66,7 +66,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="激活：啦啦啦啦啦啦啦，今天天气好晴朗，不想接电话" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VM7-Qk-uTl" customClass="LineSpaceLabel">
-                                <rect key="frame" x="8" y="30" width="284" height="18"/>
+                                <rect key="frame" x="8" y="30" width="284" height="19"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -104,7 +104,7 @@
                 <outletCollection property="techButton" destination="OHS-38-6LP" id="oEJ-10-haf"/>
                 <outletCollection property="techButton" destination="JlO-d5-NBH" id="CrO-PV-eWZ"/>
             </connections>
-            <point key="canvasLocation" x="140" y="145.5"/>
+            <point key="canvasLocation" x="140" y="145"/>
         </tableViewCell>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

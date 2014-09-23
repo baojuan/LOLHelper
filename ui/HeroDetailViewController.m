@@ -338,7 +338,8 @@
 
 - (CGFloat)secondTableViewHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 234;
+    HeroPlayTableViewCell *cell = (HeroPlayTableViewCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
+    return [cell cellHeight] + 5;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section

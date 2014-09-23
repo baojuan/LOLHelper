@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RuneLabel : UIView
-
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *titleLabel;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *contentLabel;
+@property (nonatomic, copy)NSString *runeString;
 @end
