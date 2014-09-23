@@ -22,7 +22,7 @@
     appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     self.clipsToBounds = YES;
     runeLabelView = [[RuneLabel alloc] init];
-    runeLabelView.frame = CGRectMake(65, 120, 239, 72);
+    runeLabelView.frame = CGRectMake(65, 120 - 3, 239, 72);
     [self addSubview:runeLabelView];
 }
 

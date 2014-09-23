@@ -70,13 +70,13 @@
 
         if ([aa count] == 1) {
             //调整contentLabel的位置
-            rect.size.height = 19;
+            rect.size.height = 15;
             NSString *str = aa[0];
             NSArray *typeArray = [str componentsSeparatedByString:@"*"];
             label.text = [NSString stringWithFormat:@"%@x%@",[self contentStringWithId:typeArray[0]],typeArray[1]];
         }
         else {
-            rect.size.height = 32;
+            rect.size.height = 29;
             NSMutableString *textString = [[NSMutableString alloc] init];
             for (NSString *tempString in aa) {
                 NSArray *typeArray = [tempString componentsSeparatedByString:@"*"];
@@ -99,7 +99,7 @@
         
         UILabel *titleAtIndexLable = self.titleLabel[i];
         CGRect titleRect = titleAtIndexLable.frame;
-        titleRect.origin.y = label.frame.origin.y;
+        titleRect.origin.y = label.frame.origin.y + 2;
         titleAtIndexLable.frame = titleRect;
 
         
