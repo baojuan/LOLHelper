@@ -131,38 +131,24 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ce2-ZB-gUw">
                                 <rect key="frame" x="0.0" y="70" width="320" height="449"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Mrf-F6-5Af"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="cjf-bY-ZoY">
                                     <size key="itemSize" width="73" height="95"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pek-dL-MYo" customClass="SecondCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="73" height="95"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ce2-ZB-gUw" secondAttribute="trailing" constant="-16" id="EIb-0N-omd"/>
-                            <constraint firstItem="Ce2-ZB-gUw" firstAttribute="bottom" secondItem="NsY-PF-EyY" secondAttribute="top" id="Ph3-iQ-h0e"/>
-                            <constraint firstItem="Ce2-ZB-gUw" firstAttribute="leading" secondItem="UO0-GH-DwW" secondAttribute="leadingMargin" constant="-16" id="Twd-t5-8JA"/>
-                            <constraint firstItem="Ce2-ZB-gUw" firstAttribute="trailing" secondItem="NsY-PF-EyY" secondAttribute="trailing" id="bkP-Ec-3iN"/>
-                            <constraint firstItem="Ce2-ZB-gUw" firstAttribute="top" secondItem="1fM-X3-ZVD" secondAttribute="bottom" constant="6" id="yHp-YM-Vm7"/>
+                            <constraint firstItem="Ce2-ZB-gUw" firstAttribute="leading" secondItem="NsY-PF-EyY" secondAttribute="leading" id="7Pz-TN-WQi"/>
+                            <constraint firstItem="Ce2-ZB-gUw" firstAttribute="top" secondItem="1fM-X3-ZVD" secondAttribute="bottom" constant="6" id="KNX-Au-sz5"/>
+                            <constraint firstItem="Ce2-ZB-gUw" firstAttribute="bottom" secondItem="NsY-PF-EyY" secondAttribute="top" id="vrc-eh-Qsx"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="bkP-Ec-3iN"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="英雄攻略" id="SyK-zn-d3i"/>
                     <connections>
@@ -189,16 +175,32 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JoT-8U-zcO">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="jGk-O6-L70"/>
+                                </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JoT-8U-zcO" firstAttribute="leading" secondItem="3gA-wd-yPz" secondAttribute="leadingMargin" constant="-16" id="7fK-Vu-Vfr"/>
-                            <constraint firstItem="JoT-8U-zcO" firstAttribute="top" secondItem="3gA-wd-yPz" secondAttribute="topMargin" id="cuw-nt-ZLs"/>
+                            <constraint firstItem="JoT-8U-zcO" firstAttribute="leading" secondItem="ywT-sn-kDe" secondAttribute="leading" id="V1R-bR-lQa"/>
+                            <constraint firstItem="JoT-8U-zcO" firstAttribute="top" secondItem="3gA-wd-yPz" secondAttribute="top" id="X7f-xb-rDD"/>
+                            <constraint firstItem="JoT-8U-zcO" firstAttribute="top" secondItem="3gA-wd-yPz" secondAttribute="topMargin" id="br4-52-h3H"/>
                             <constraint firstAttribute="bottom" secondItem="JoT-8U-zcO" secondAttribute="bottom" id="lxw-ZA-VeL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JoT-8U-zcO" secondAttribute="trailing" constant="-16" id="wZt-1m-01h"/>
+                            <constraint firstItem="JoT-8U-zcO" firstAttribute="top" secondItem="3gA-wd-yPz" secondAttribute="topMargin" id="zQ6-G7-160"/>
+                            <constraint firstAttribute="bottom" secondItem="JoT-8U-zcO" secondAttribute="bottom" id="zmS-Nl-kr4"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7fK-Vu-Vfr"/>
+                                <exclude reference="br4-52-h3H"/>
+                                <exclude reference="lxw-ZA-VeL"/>
+                                <exclude reference="wZt-1m-01h"/>
+                                <exclude reference="zQ6-G7-160"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="英雄详情" id="1Eq-K5-hAB"/>
                     <connections>

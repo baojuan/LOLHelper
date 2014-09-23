@@ -160,7 +160,6 @@
         ContentTableViewCell *cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exp_use"];
         cell.delegate = self;
         [cell insertIntoData:string];
-        
         return cell;
     }
     

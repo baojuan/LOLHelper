@@ -11,7 +11,6 @@
 
 @implementation RuneLabel
 {
-    NSMutableArray *_runeArray;
     AppDelegate *appdelegate;
 }
 
@@ -34,7 +33,6 @@
         self = [arrayOfViews objectAtIndex:0];
 
         appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        _runeArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -43,23 +41,24 @@
 {
     [super awakeFromNib];
     appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    _runeArray = [[NSMutableArray alloc] init];
 }
 
 - (void)setRuneString:(NSString *)runeString
 {
     _runeString = runeString;
+    NSMutableArray *runeArray = [[NSMutableArray alloc] init];
+
     NSArray *array = [runeString componentsSeparatedByString:@";"];
     for (NSString *string in array) {
         NSArray *aa = [string componentsSeparatedByString:@","];
         if ([aa count] > 1) {
-            [_runeArray addObject:aa];
+            [runeArray addObject:aa];
         }
         else {
-            [_runeArray addObject:@[string]];
+            [runeArray addObject:@[string]];
         }
     }
-    [self insertIntoData:_runeArray];
+    [self insertIntoData:runeArray];
 }
 
 - (void)insertIntoData:(NSArray *)array

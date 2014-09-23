@@ -53,7 +53,7 @@
     }
     for (UIButton *bb in _buttonArray) {
         bb.selected = NO;
-        bb.frame = CGRectMake(bb.frame.origin.x, 0, bb.frame.size.width, self.frame.size.height);
+//        bb.frame = CGRectMake(bb.frame.origin.x, 0, bb.frame.size.width, self.frame.size.height);
     }
     button.selected = YES;
     [self.delegate segmentControlSelectAtIndex:(button.tag - 1000)];

@@ -26,9 +26,10 @@
             _label.font = [UIFont systemFontOfSize:13];
             _label.numberOfLines = 0;
             [self addSubview:_label];
-
+            
         }
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+//        _label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleHeight;
 
     }
     return self;
@@ -50,15 +51,17 @@
     _label.numberOfLines = 0;
     [self addSubview:_label];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+//    _label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
 }
 
 - (void)insertIntoData:(NSString *)string
 {
-//    if ([_label.text length] == 0) {
-        _label.text = string;
-        [_label drawTextInRect:_label.bounds];
-//    }
-   
+    _label.backgroundColor = [UIColor redColor];
+    CGRect rect = _label.frame;
+    rect.size.height = [_label insertIntoContentWithContent:string] + 5;//加5因为行间距
+    rect.origin.y += rect.size.height / 2.0; //除2应该是因为画得时候center不对
+    _label.frame = rect;
+
 }
 
 - (CGFloat)cellHeight

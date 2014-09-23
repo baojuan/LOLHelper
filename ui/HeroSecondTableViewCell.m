@@ -66,7 +66,6 @@
     self.techTitleLabel.text = dict[@"name"];
     
     heightContent = [self.detailLabel insertIntoContentWithContent:[NSString stringWithFormat:@"\n%@",dict[@"text"]]];
-
     string = dict[@"text"];
     if ([dict[@"mp"] length] > 0) {
         self.wasteLabel.text = [NSString stringWithFormat:@"技能消耗：%@",dict[@"mp"]];
@@ -100,7 +99,7 @@
 //    detailFrame.size.height = heightString;
 
     
-    detailFrame.size.height = heightContent - 10;
+    detailFrame.size.height = heightContent;
     
     
     self.detailLabel.frame = detailFrame;
