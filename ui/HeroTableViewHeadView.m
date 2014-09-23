@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib
 {
-    self.titleLabel.frame = CGRectMake(10, 100, self.titleLabel.frame.size.width, self.titleLabel.frame.size.height);
+    self.titleLabel.frame = CGRectMake(10, 96, self.titleLabel.frame.size.width, self.titleLabel.frame.size.height);
     self.nameLabel.frame = CGRectMake(10, 100 + self.titleLabel.frame.size.height, self.nameLabel.frame.size.width, self.nameLabel.frame.size.height);
 }
 
