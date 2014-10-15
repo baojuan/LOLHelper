@@ -93,6 +93,9 @@
 		BF1FE88519CF0A6F002B2C63 /* techBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF1FE88419CF0A6F002B2C63 /* techBackground@2x.png */; };
 		BF1FE88C19CF2609002B2C63 /* AttributeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1FE88A19CF2609002B2C63 /* AttributeTableViewCell.m */; };
 		BF1FE88D19CF2609002B2C63 /* AttributeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1FE88B19CF2609002B2C63 /* AttributeTableViewCell.xib */; };
+		BF58952819EEC41C00112AFD /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58952419EEC41C00112AFD /* CircleView.m */; };
+		BF58952919EEC41C00112AFD /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58952619EEC41C00112AFD /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF58952C19EED0C900112AFD /* LoadMoreTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58952B19EED0C900112AFD /* LoadMoreTableFooterView.m */; };
 		BFFAF46C19D055A300934FF2 /* HeroSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFAF46B19D055A300934FF2 /* HeroSegmentControl.m */; };
 		BFFAF46F19D06FF100934FF2 /* HeroTableViewHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFAF46E19D06FF100934FF2 /* HeroTableViewHeadView.m */; };
 		BFFAF47119D0700700934FF2 /* HeroTableViewHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFAF47019D0700700934FF2 /* HeroTableViewHeadView.xib */; };
@@ -256,6 +259,12 @@
 		BF1FE88919CF2609002B2C63 /* AttributeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeTableViewCell.h; sourceTree = "<group>"; };
 		BF1FE88A19CF2609002B2C63 /* AttributeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeTableViewCell.m; sourceTree = "<group>"; };
 		BF1FE88B19CF2609002B2C63 /* AttributeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttributeTableViewCell.xib; sourceTree = "<group>"; };
+		BF58952319EEC41C00112AFD /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		BF58952419EEC41C00112AFD /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		BF58952519EEC41C00112AFD /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		BF58952619EEC41C00112AFD /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		BF58952A19EED0C900112AFD /* LoadMoreTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadMoreTableFooterView.h; sourceTree = "<group>"; };
+		BF58952B19EED0C900112AFD /* LoadMoreTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadMoreTableFooterView.m; sourceTree = "<group>"; };
 		BFFAF46A19D055A300934FF2 /* HeroSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroSegmentControl.h; sourceTree = "<group>"; };
 		BFFAF46B19D055A300934FF2 /* HeroSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroSegmentControl.m; sourceTree = "<group>"; };
 		BFFAF46D19D06FF100934FF2 /* HeroTableViewHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroTableViewHeadView.h; sourceTree = "<group>"; };
@@ -553,6 +562,7 @@
 		BF1FE81F19CE9076002B2C63 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				BF58952119EEC41C00112AFD /* View */,
 				BF1FE86619CEB5CC002B2C63 /* SelectButton.h */,
 				BF1FE86719CEB5CC002B2C63 /* SelectButton.m */,
 				BF1FE83119CE9155002B2C63 /* pinyin.c */,
@@ -624,6 +634,27 @@
 				BFFAF47419D0742300934FF2 /* HeroPlayTableViewCell.xib */,
 			);
 			name = heroCell;
+			sourceTree = "<group>";
+		};
+		BF58952119EEC41C00112AFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF58952A19EED0C900112AFD /* LoadMoreTableFooterView.h */,
+				BF58952B19EED0C900112AFD /* LoadMoreTableFooterView.m */,
+				BF58952219EEC41C00112AFD /* RefreshTableHeaderView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF58952219EEC41C00112AFD /* RefreshTableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				BF58952319EEC41C00112AFD /* CircleView.h */,
+				BF58952419EEC41C00112AFD /* CircleView.m */,
+				BF58952519EEC41C00112AFD /* EGORefreshTableHeaderView.h */,
+				BF58952619EEC41C00112AFD /* EGORefreshTableHeaderView.m */,
+			);
+			path = RefreshTableHeaderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -758,10 +789,12 @@
 				BF1FE7F519CE9068002B2C63 /* AFURLRequestSerialization.m in Sources */,
 				BF1FE7F419CE9068002B2C63 /* AFURLConnectionOperation.m in Sources */,
 				BF1FE80619CE9068002B2C63 /* SDWebImagePrefetcher.m in Sources */,
+				BF58952819EEC41C00112AFD /* CircleView.m in Sources */,
 				BF1FE80D19CE9068002B2C63 /* UIView+WebCacheOperation.m in Sources */,
 				BF1FE87F19CF08B9002B2C63 /* HeroSecondTableViewCell.m in Sources */,
 				BF1FE7F919CE9068002B2C63 /* FMDatabase.m in Sources */,
 				BF1FE7F819CE9068002B2C63 /* DataBase.m in Sources */,
+				BF58952919EEC41C00112AFD /* EGORefreshTableHeaderView.m in Sources */,
 				BF1FE86819CEB5CC002B2C63 /* SelectButton.m in Sources */,
 				BF1FE80919CE9068002B2C63 /* UIImage+MultiFormat.m in Sources */,
 				BF1FE80A19CE9068002B2C63 /* UIImage+WebP.m in Sources */,
@@ -777,6 +810,7 @@
 				BF1FE7F719CE9068002B2C63 /* AFURLSessionManager.m in Sources */,
 				BFFAF47519D0742300934FF2 /* HeroPlayTableViewCell.m in Sources */,
 				BF1FE7FC19CE9068002B2C63 /* FMDatabaseQueue.m in Sources */,
+				BF58952C19EED0C900112AFD /* LoadMoreTableFooterView.m in Sources */,
 				BF1FE87A19CED973002B2C63 /* ColorNumberView.m in Sources */,
 				BF1FE7F619CE9068002B2C63 /* AFURLResponseSerialization.m in Sources */,
 				BF1FE78A19CE86CE002B2C63 /* AppDelegate.m in Sources */,

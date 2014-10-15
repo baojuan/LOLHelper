@@ -7,7 +7,7 @@
 //
 
 #import "FirstTableViewCell.h"
-
+#import "Default.h"
 @implementation FirstTableViewCell
 
 - (void)awakeFromNib {
@@ -44,11 +44,11 @@
         self.smallImageView.frame = smallImageViewRect;
         CGRect titleRect = self.titleLabel.frame;
         titleRect.origin.x = 20;
-        titleRect.size.width = 220 + 70;
+        titleRect.size.width = [Default screenSize].width - 30;
         self.titleLabel.frame = titleRect;
         CGRect excerptFrame = self.excerptLabel.frame;
         excerptFrame.origin.x = 20;
-        excerptFrame.size.width = 220 + 70;
+        excerptFrame.size.width = [Default screenSize].width - 30;
         self.excerptLabel.frame = excerptFrame;
     }
 }

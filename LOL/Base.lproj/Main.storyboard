@@ -66,7 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="yMw-ce-tld">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="separatorColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <sections/>
                             </tableView>
@@ -74,8 +74,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="yMw-ce-tld" secondAttribute="trailing" constant="-16" id="6TR-CF-iPT"/>
-                            <constraint firstItem="yMw-ce-tld" firstAttribute="top" secondItem="Y3j-F5-6VO" secondAttribute="top" id="D60-fH-e9K"/>
-                            <constraint firstAttribute="bottom" secondItem="yMw-ce-tld" secondAttribute="bottom" id="Pyn-k5-adB"/>
+                            <constraint firstItem="yMw-ce-tld" firstAttribute="top" secondItem="Y3j-F5-6VO" secondAttribute="top" constant="64" id="D60-fH-e9K"/>
+                            <constraint firstAttribute="bottom" secondItem="yMw-ce-tld" secondAttribute="bottom" constant="49" id="Pyn-k5-adB"/>
                             <constraint firstItem="yMw-ce-tld" firstAttribute="leading" secondItem="Y3j-F5-6VO" secondAttribute="leadingMargin" constant="-16" id="feN-nI-uC2"/>
                         </constraints>
                     </view>
@@ -101,12 +101,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mjf-G7-LYA">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mjf-G7-LYA">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mjf-G7-LYA" firstAttribute="top" secondItem="vbV-Ik-5jq" secondAttribute="bottom" constant="-64" id="05E-HL-IvQ"/>
+                            <constraint firstItem="Mjf-G7-LYA" firstAttribute="leading" secondItem="hfa-RB-ROY" secondAttribute="leadingMargin" constant="-16" id="6Q3-fk-B3R"/>
+                            <constraint firstAttribute="bottom" secondItem="Mjf-G7-LYA" secondAttribute="bottom" id="Shd-GK-d2x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mjf-G7-LYA" secondAttribute="trailing" constant="-16" id="oMs-LR-H4y"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="新闻详情" id="F7z-AG-Fmp"/>
                     <connections>
@@ -131,9 +137,6 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ce2-ZB-gUw">
                                 <rect key="frame" x="0.0" y="70" width="320" height="449"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="Mrf-F6-5Af"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="cjf-bY-ZoY">
                                     <size key="itemSize" width="73" height="95"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -147,6 +150,7 @@
                         <constraints>
                             <constraint firstItem="Ce2-ZB-gUw" firstAttribute="leading" secondItem="NsY-PF-EyY" secondAttribute="leading" id="7Pz-TN-WQi"/>
                             <constraint firstItem="Ce2-ZB-gUw" firstAttribute="top" secondItem="1fM-X3-ZVD" secondAttribute="bottom" constant="6" id="KNX-Au-sz5"/>
+                            <constraint firstItem="Ce2-ZB-gUw" firstAttribute="trailing" secondItem="NsY-PF-EyY" secondAttribute="trailing" id="fvb-W7-GDT"/>
                             <constraint firstItem="Ce2-ZB-gUw" firstAttribute="bottom" secondItem="NsY-PF-EyY" secondAttribute="top" id="vrc-eh-Qsx"/>
                         </constraints>
                     </view>

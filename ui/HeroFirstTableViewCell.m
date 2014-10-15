@@ -8,7 +8,9 @@
 
 #import "HeroFirstTableViewCell.h"
 #import "Default.h"
+
 @implementation HeroFirstTableViewCell
+
 
 - (void)awakeFromNib {
     // Initialization code
