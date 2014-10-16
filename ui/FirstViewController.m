@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) NSString *bannerImageUrl;
 @property (nonatomic, strong) NSString *bannerUrl;
+@property (nonatomic, strong) NSString *lastId;
 
 @end
 
@@ -34,6 +35,7 @@
 
 - (void)viewDidLoad
 {
+    self.lastId = @"";
     self.dataArray = [[NSMutableArray alloc] init];
     self.navigationItem.title = @"新闻资讯";
     self.tableView.delegate = self;
@@ -46,7 +48,7 @@
     _loadMoreView = [[LoadMoreTableFooterView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
     _loadMoreView.delegate = self;
     self.tableView.tableFooterView = _loadMoreView;
-    [self getNews:@"0"];
+    [self getNews:self.lastId];
     [_refreshHeaderView refreshLastUpdatedDate];
 
 
@@ -115,21 +117,25 @@
 
 - (void)getNews:(NSString *)lastID
 {
-    NSString *url = [NSString stringWithFormat:@"%@?method=getNews",[Default server]];
+    NSString *url = [NSString stringWithFormat:@"%@?method=getNews&lastid=%@",[Default server],lastID];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"getNews success");
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        if ([lastID isEqualToString:@"0"]) {
-            [_dataArray removeAllObjects];
+        NSArray *aa = [[dict objectForKey:@"data"] objectForKey:@"list"];
+        if ([aa count] > 0) {
+            if ([lastID isEqualToString:@""]) {
+                [_dataArray removeAllObjects];
+            }
+            [_dataArray addObjectsFromArray:aa];
+            self.bannerImageUrl = [[dict objectForKey:@"data"] objectForKey:@"banner"];
+            self.bannerUrl = [[dict objectForKey:@"data"] objectForKey:@"banner_url"];
+            self.tableView.tableHeaderView = [self tableViewHeadView];
+            [self.tableView reloadData];
+            self.lastId = _dataArray[([_dataArray count] - 1)][@"id"];
+            [self doneLoadingTableViewData];
         }
-        [_dataArray addObjectsFromArray:[[dict objectForKey:@"data"] objectForKey:@"list"]];
-        self.bannerImageUrl = [[dict objectForKey:@"data"] objectForKey:@"banner"];
-        self.bannerUrl = [[dict objectForKey:@"data"] objectForKey:@"banner_url"];
-        self.tableView.tableHeaderView = [self tableViewHeadView];
-        [self.tableView reloadData];
-        [self doneLoadingTableViewData];
         [_loadMoreView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failure: %@", error);
@@ -155,7 +161,7 @@
     //  should be calling your tableviews data source model to reload
     //  put here just for demo
     _reloading = YES;
-    [self getNews:@"0"];
+    [self getNews:@""];
     
 }
 
