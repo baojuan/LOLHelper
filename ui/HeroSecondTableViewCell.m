@@ -65,7 +65,7 @@
     NSDictionary *dict = array[number];
     self.techTitleLabel.text = dict[@"name"];
     
-    heightContent = [self.detailLabel insertIntoContentWithContent:[NSString stringWithFormat:@"\n%@",dict[@"text"]]];
+    heightContent = [self.detailLabel insertIntoContentWithContent:[NSString stringWithFormat:@"\n%@",dict[@"text"]]] + 5;
     string = dict[@"text"];
     if ([dict[@"mp"] length] > 0) {
         self.wasteLabel.text = [NSString stringWithFormat:@"技能消耗：%@",dict[@"mp"]];
@@ -98,7 +98,6 @@
 //    }
 //    detailFrame.size.height = heightString;
 
-    
     detailFrame.size.height = heightContent;
     
     
@@ -127,6 +126,9 @@
     self.timeLabel.frame = timeFrame;
     
     CGRect contentBackgroundFrame = self.contentBackgroundView.frame;
+    contentBackgroundFrame.origin.x = 10;
+    contentBackgroundFrame.origin.y = 65;
+    contentBackgroundFrame.size.width = 300;
     contentBackgroundFrame.size.height = timeFrame.size.height + timeFrame.origin.y + 7;
     self.contentBackgroundView.frame = contentBackgroundFrame;
     

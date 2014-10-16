@@ -26,7 +26,7 @@
             _label.font = [UIFont systemFontOfSize:13];
             _label.numberOfLines = 0;
             [self addSubview:_label];
-            
+            self.clipsToBounds = YES;
         }
         self.selectionStyle = UITableViewCellSelectionStyleNone;
 //        _label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleHeight;
@@ -42,7 +42,7 @@
     }
     _label = [[LineSpaceLabel alloc] initWithFrame:CGRectMake(10, 10, [Default screenSize].width - 20, 10)];
     _label.delegate = self;
-
+    _label.autoresizingMask = UIViewAutoresizingNone;
     _label.lineSpace = 5;
     _label.charSpace = 2;
     _label.backgroundColor = [UIColor clearColor];
@@ -56,17 +56,20 @@
 
 - (void)insertIntoData:(NSString *)string
 {
-    _label.backgroundColor = [UIColor redColor];
     CGRect rect = _label.frame;
     rect.size.height = [_label insertIntoContentWithContent:string] + 5;//加5因为行间距
     rect.origin.y += rect.size.height / 2.0; //除2应该是因为画得时候center不对
     _label.frame = rect;
+//    CGRect layerRect = _label.layer.frame;
+//    layerRect.size.height = _label.frame.size.height;
+//    layerRect.origin.y = 10;
+//    _label.layer.frame = layerRect;
 
 }
 
 - (CGFloat)cellHeight
 {
-//    return _label.height;
+    return _label.height;
 //    return [_label height];
     return 0;
 }
@@ -74,9 +77,16 @@
 - (void)calculateCellHeight:(CGFloat)height
 {
     CGRect rect = _label.frame;
-    rect.size.height = height;
+    if ([Default isiOS8]) {
+        rect.origin.y = 10;
+    }
+    else {
+        rect.size.height = height;
+
+    }
     _label.frame = rect;
-    cellHeight = height;
+    
+//    cellHeight = height;
 //    [self.delegate cellHeightCalculatedToRefreshCell];
 }
 

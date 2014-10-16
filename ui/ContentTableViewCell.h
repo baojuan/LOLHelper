@@ -18,7 +18,7 @@
 
 @interface ContentTableViewCell : UITableViewCell<LineSpaceLabelDelegate>
 @property (nonatomic, weak) id <ContentTableViewCellDelegate> delegate;
-@property (nonatomic, strong) LineSpaceLabel *label;
+@property (nonatomic, strong) IBOutlet LineSpaceLabel *label;
 
 - (void)insertIntoData:(NSString *)string;
 - (CGFloat)cellHeight;
