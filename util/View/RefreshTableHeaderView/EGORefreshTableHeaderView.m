@@ -72,7 +72,7 @@
 		CircleView *circleView = [[CircleView alloc] initWithFrame:CGRectMake(10, 5, 35, 35)];
         _circleView = circleView;
         [self addSubview:circleView];
-        [_circleView release];
+        [circleView release];
         
 		UIActivityIndicatorView *view = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 		view.frame = CGRectMake(25.0f, frame.size.height - 38.0f, 20.0f, 20.0f);

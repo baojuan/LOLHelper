@@ -25,32 +25,28 @@
 {
     if (haveImage) {
         CGRect smallImageViewRect = self.smallImageView.frame;
+        smallImageViewRect.origin.x = 10;
         smallImageViewRect.size.width = 70;
         self.smallImageView.frame = smallImageViewRect;
         
-        CGRect titleRect = self.titleLabel.frame;
-        titleRect.origin.x = 90;
-        titleRect.size.width = 220;
-        self.titleLabel.frame = titleRect;
-        CGRect excerptFrame = self.excerptLabel.frame;
-        excerptFrame.origin.x = 90;
-        excerptFrame.size.width = 220;
-        self.excerptLabel.frame = excerptFrame;
         
     }
     else {
         CGRect smallImageViewRect = self.smallImageView.frame;
+        smallImageViewRect.origin.x = 10;
         smallImageViewRect.size.width = 0;
         self.smallImageView.frame = smallImageViewRect;
-        CGRect titleRect = self.titleLabel.frame;
-        titleRect.origin.x = 20;
-        titleRect.size.width = [Default screenSize].width - 30;
-        self.titleLabel.frame = titleRect;
-        CGRect excerptFrame = self.excerptLabel.frame;
-        excerptFrame.origin.x = 20;
-        excerptFrame.size.width = [Default screenSize].width - 30;
-        self.excerptLabel.frame = excerptFrame;
     }
+    
+    CGRect titleRect = self.titleLabel.frame;
+    titleRect.origin.x = self.smallImageView.frame.size.width + self.smallImageView.frame.origin.x + 10;
+    titleRect.size.width = [Default screenSize].width - titleRect.origin.x - 10;
+    self.titleLabel.frame = titleRect;
+    CGRect excerptFrame = self.excerptLabel.frame;
+    excerptFrame.origin.x = self.smallImageView.frame.size.width + self.smallImageView.frame.origin.x + 10;
+    excerptFrame.size.width = [Default screenSize].width - 10 - excerptFrame.origin.x;
+    self.excerptLabel.frame = excerptFrame;
+
 }
 
 

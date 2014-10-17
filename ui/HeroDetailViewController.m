@@ -63,7 +63,7 @@
 //    footView.backgroundColor = [Default colorWithR:228 withG:228 withB:228];
 //    self.tableView.tableFooterView = footView;
 //    self.tableView.backgroundColor = [Default colorWithR:228 withG:228 withB:228];
-    control = [[HeroSegmentControl alloc] initWithTitleArray:@[@"介绍",@"玩法"]];
+    control = [[HeroSegmentControl alloc] initWithTitleArray:@[@"介绍",@"玩法",@"攻略"]];
     control.delegate = self;
 }
 

@@ -14,6 +14,14 @@
 #import "WebViewController.h"
 #import "EGORefreshTableHeaderView.h"
 #import "LoadMoreTableFooterView.h"
+#import <MediaPlayer/MediaPlayer.h>
+
+
+
+#define BASIC_YOUKU @"<html><head><div id=\"youkuplayer\"></div><script type=\"text/javascript\" src=\"http://player.youku.com/jsapi\">player= new YKU.Player('youkuplayer',{client_id:'04a4fa40c0634318',vid:'%@'});</script></head></html>"
+
+#define BASIC_YOUKU_INNER @"<html><head><div id=\"youkuplayer\"></div><script type=\"text/javascript\" src=\"http://player.youku.com/jsapi\">player= new YKU.Player('youkuplayer',{client_id:'04a4fa40c0634318',vid:'%@',embsig:'%@'});</script></head></html>"
+
 
 @interface FirstViewController()<EGORefreshTableHeaderDelegate,LoadMoreTableFooterDelegate>
 
@@ -40,6 +48,7 @@
     self.navigationItem.title = @"新闻资讯";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.contentInset = UIEdgeInsetsZero;
     self.tableView.separatorInset = UIEdgeInsetsMake(0, -5, 0, 5);
     _refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.tableView.frame.size.height)];
     _refreshHeaderView.backgroundColor = [UIColor clearColor];
@@ -95,6 +104,7 @@
     else
     {
         [cell haveImage:NO];
+        cell.smallImageView.image = nil;
     }
     
     cell.titleLabel.text = [dict objectForKey:@"title"];
@@ -111,7 +121,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     _selectedDict = [_dataArray objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"WebViewController" sender:self];
+    if ([_selectedDict[@"videoID"] length] > 0) {
+        NSString *url = @"";//[NSString stringWithFormat:@"%@",BASIC_YOUKU,_selectedDict[@"videoID"]];
+        MPMoviePlayerViewController *controller = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:url]];
+        [self presentMoviePlayerViewControllerAnimated:controller];
+    }
+    else {
+        [self performSegueWithIdentifier:@"WebViewController" sender:self];
+
+    }
 
 }
 
@@ -179,23 +197,36 @@
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
+    if (scrollView.contentOffset.y < 0) {
     [_refreshHeaderView egoRefreshScrollViewWillBeginScroll:scrollView];
-    [_refreshHeaderView egoRefreshScrollViewWillBeginScroll:scrollView];
+    }
+    
 
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    [_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
-    [_loadMoreView egoRefreshScrollViewDidScroll:scrollView];
+    if (scrollView.contentOffset.y < 0) {
+        [_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+
+    }
+    else {
+        [_loadMoreView egoRefreshScrollViewDidScroll:scrollView];
+
+    }
 
     
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    
-    [_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
-    [_loadMoreView egoRefreshScrollViewDidEndDragging:scrollView];
+    if (scrollView.contentOffset.y < 0) {
+        [_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+
+    }
+    else {
+        [_loadMoreView egoRefreshScrollViewDidEndDragging:scrollView];
+
+    }
 
     
 }
