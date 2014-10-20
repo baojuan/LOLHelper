@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B53B5DC19F50F5600312D7B /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B53B5D819F50F5600312D7B /* MBProgressHUD+Add.m */; };
+		5B53B5DD19F50F5600312D7B /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B53B5D919F50F5600312D7B /* MBProgressHUD.bundle */; };
+		5B53B5DE19F50F5600312D7B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B53B5DB19F50F5600312D7B /* MBProgressHUD.m */; };
 		5BE2711419CFD7620012F25C /* LineSpaceLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2711319CFD7620012F25C /* LineSpaceLabel.m */; };
 		5BE2711719CFD93E0012F25C /* ContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2711619CFD93E0012F25C /* ContentTableViewCell.m */; };
 		5BE2711919D123DB0012F25C /* RuneLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE2711819D123DB0012F25C /* RuneLabel.xib */; };
@@ -118,6 +121,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B53B5D719F50F5600312D7B /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
+		5B53B5D819F50F5600312D7B /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
+		5B53B5D919F50F5600312D7B /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		5B53B5DA19F50F5600312D7B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		5B53B5DB19F50F5600312D7B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		5BE2711219CFD7620012F25C /* LineSpaceLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSpaceLabel.h; sourceTree = "<group>"; };
 		5BE2711319CFD7620012F25C /* LineSpaceLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineSpaceLabel.m; sourceTree = "<group>"; };
 		5BE2711519CFD93E0012F25C /* ContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTableViewCell.h; sourceTree = "<group>"; };
@@ -307,6 +315,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B53B5D619F50F5600312D7B /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				5B53B5D719F50F5600312D7B /* MBProgressHUD+Add.h */,
+				5B53B5D819F50F5600312D7B /* MBProgressHUD+Add.m */,
+				5B53B5D919F50F5600312D7B /* MBProgressHUD.bundle */,
+				5B53B5DA19F50F5600312D7B /* MBProgressHUD.h */,
+				5B53B5DB19F50F5600312D7B /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		BF1FE77819CE86CE002B2C63 = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +393,7 @@
 		BF1FE7AA19CE9068002B2C63 /* sdk */ = {
 			isa = PBXGroup;
 			children = (
+				5B53B5D619F50F5600312D7B /* MBProgressHUD */,
 				BF1FE7AB19CE9068002B2C63 /* AFNetworking */,
 				BF1FE7BF19CE9068002B2C63 /* database */,
 				BF1FE7CD19CE9068002B2C63 /* SDWebImage */,
@@ -738,6 +759,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BE2711919D123DB0012F25C /* RuneLabel.xib in Resources */,
+				5B53B5DD19F50F5600312D7B /* MBProgressHUD.bundle in Resources */,
 				BF1FE82619CE9076002B2C63 /* hero@2x.png in Resources */,
 				BFFAF47619D0742300934FF2 /* HeroPlayTableViewCell.xib in Resources */,
 				BF1FE87519CED5CD002B2C63 /* coin@2x.png in Resources */,
@@ -792,6 +814,7 @@
 				BF58952819EEC41C00112AFD /* CircleView.m in Sources */,
 				BF1FE80D19CE9068002B2C63 /* UIView+WebCacheOperation.m in Sources */,
 				BF1FE87F19CF08B9002B2C63 /* HeroSecondTableViewCell.m in Sources */,
+				5B53B5DC19F50F5600312D7B /* MBProgressHUD+Add.m in Sources */,
 				BF1FE7F919CE9068002B2C63 /* FMDatabase.m in Sources */,
 				BF1FE7F819CE9068002B2C63 /* DataBase.m in Sources */,
 				BF58952919EEC41C00112AFD /* EGORefreshTableHeaderView.m in Sources */,
@@ -839,6 +862,7 @@
 				BF1FE88C19CF2609002B2C63 /* AttributeTableViewCell.m in Sources */,
 				BF1FE80719CE9068002B2C63 /* UIButton+WebCache.m in Sources */,
 				BF1FE86F19CED395002B2C63 /* HeroFirstTableViewCell.m in Sources */,
+				5B53B5DE19F50F5600312D7B /* MBProgressHUD.m in Sources */,
 				BF1FE80B19CE9068002B2C63 /* UIImageView+HighlightedWebCache.m in Sources */,
 				BF1FE80819CE9068002B2C63 /* UIImage+GIF.m in Sources */,
 				BF1FE80019CE9068002B2C63 /* SDImageCache.m in Sources */,

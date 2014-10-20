@@ -20,6 +20,9 @@
 #import "HeroPlayTableViewCell.h"
 #import "FirstTableViewCell.h"
 #import "UIImageView+WebCache.h"
+#import <MediaPlayer/MediaPlayer.h>
+
+
 
 @interface HeroDetailViewController ()<UITableViewDataSource, UITableViewDelegate,HeroSecondTableViewCellDelegate,ContentTableViewCellDelegate,HeroSegmentControlDelegate>
 @property (nonatomic, copy) NSDictionary *dataDict;
@@ -444,6 +447,36 @@
 {
     return 70.0;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (selectedNumber == 2) {
+        NSDictionary *dict = [self.newsArray objectAtIndex:indexPath.row];
+        if ([dict[@"videoID"] length] > 0) {
+            [self requestVideoUrl:dict[@"videoID"]];
+        }
+
+    }
+}
+
+- (void)requestVideoUrl:(NSString *)videoId
+{
+    
+    NSString *url = [NSString stringWithFormat:@"http://app.dianjingshijie.com/flashinterface/getmovieurl.ashx?url=http://v.youku.com/v_show/id_%@.html&typeid=2",videoId];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"getNews success");
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        MPMoviePlayerViewController *controller = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:string]];
+        [self presentMoviePlayerViewControllerAnimated:controller];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure: %@", error);
+    }];
+    [operation start];
+    
+}
+
 
 
 #pragma mark -
