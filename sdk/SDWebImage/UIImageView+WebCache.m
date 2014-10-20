@@ -53,10 +53,15 @@ static char imageURLKey;
             dispatch_main_sync_safe(^{
                 if (!wself) return;
                 if (image) {
+                    [self.layer addAnimation:[self showAnimation] forKey:@"animation"];
+
                     wself.image = image;
+
                     [wself setNeedsLayout];
                 } else {
                     if ((options & SDWebImageDelayPlaceholder)) {
+                        [self.layer addAnimation:[self showAnimation] forKey:@"animation"];
+
                         wself.image = placeholder;
                         [wself setNeedsLayout];
                     }
@@ -75,6 +80,21 @@ static char imageURLKey;
             }
         });
     }
+}
+
+- (CABasicAnimation *)showAnimation
+{
+    CABasicAnimation *animation2 = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    animation2.duration = 0.3;
+    animation2.repeatCount = 1;
+    animation2.autoreverses = NO;
+    animation2.delegate = self;
+    animation2.fromValue = [NSNumber numberWithFloat:0.0];
+    animation2.toValue = [NSNumber numberWithFloat:1.0];
+    animation2.removedOnCompletion = NO;
+    animation2.fillMode = kCAFillModeForwards;
+    return animation2;
+
 }
 
 - (void)sd_setImageWithPreviousCachedImageWithURL:(NSURL *)url andPlaceholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionBlock)completedBlock {

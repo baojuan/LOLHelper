@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LTabbarItem : UIBarButtonItem
+@interface LTabbarItem : UITabBarItem
 
 @end

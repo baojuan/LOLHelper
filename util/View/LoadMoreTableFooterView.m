@@ -62,22 +62,11 @@
     _statusLabel =
         [[UILabel alloc] initWithFrame:CGRectMake(0.0f, midY - 10, self.frame.size.width, 20.0f)];
     _statusLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    _statusLabel.font = [UIFont fontWithName:@"MyriadPro-Semibold" size:11.0f];
+    _statusLabel.font = [UIFont systemFontOfSize:13];
     _statusLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
     _statusLabel.backgroundColor = [UIColor clearColor];
     _statusLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_statusLabel];
-
-    /* Config Arrow Image */
-    _arrowImage = [CALayer layer];
-    _arrowImage.frame = CGRectMake(25.0f, midY - 20, 30.0f, 55.0f);
-    _arrowImage.contentsGravity = kCAGravityResizeAspect;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
-    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
-      _arrowImage.contentsScale = [[UIScreen mainScreen] scale];
-    }
-#endif
-    [[self layer] addSublayer:_arrowImage];
 
     /* Config activity indicator */
     _activityView =

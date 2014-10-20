@@ -18,11 +18,6 @@
 
 
 
-#define BASIC_YOUKU @"<html><head><div id=\"youkuplayer\"></div><script type=\"text/javascript\" src=\"http://player.youku.com/jsapi\">player= new YKU.Player('youkuplayer',{client_id:'04a4fa40c0634318',vid:'%@'});</script></head></html>"
-
-#define BASIC_YOUKU_INNER @"<html><head><div id=\"youkuplayer\"></div><script type=\"text/javascript\" src=\"http://player.youku.com/jsapi\">player= new YKU.Player('youkuplayer',{client_id:'04a4fa40c0634318',vid:'%@',embsig:'%@'});</script></head></html>"
-
-
 @interface FirstViewController()<EGORefreshTableHeaderDelegate,LoadMoreTableFooterDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
@@ -54,7 +49,7 @@
     _refreshHeaderView.backgroundColor = [UIColor clearColor];
     _refreshHeaderView.delegate = self;
     [self.view insertSubview:_refreshHeaderView belowSubview:self.tableView];
-    _loadMoreView = [[LoadMoreTableFooterView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
+    _loadMoreView = [[LoadMoreTableFooterView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
     _loadMoreView.delegate = self;
     self.tableView.tableFooterView = _loadMoreView;
     [self getNews:self.lastId];
@@ -99,7 +94,8 @@
     NSDictionary *dict = [_dataArray objectAtIndex:indexPath.row];
     if ([[dict objectForKey:@"image"] length] > 0) {
         [cell haveImage:YES];
-        [cell.smallImageView setImageWithURL:[NSURL URLWithString:[dict objectForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"small_image_loading"]];
+        NSString *string = [dict objectForKey:@"image"];
+        [cell.smallImageView setImageWithURL:[NSURL URLWithString:[string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"small_image_loading"]];
     }
     else
     {
@@ -122,14 +118,30 @@
 {
     _selectedDict = [_dataArray objectAtIndex:indexPath.row];
     if ([_selectedDict[@"videoID"] length] > 0) {
-        NSString *url = @"";//[NSString stringWithFormat:@"%@",BASIC_YOUKU,_selectedDict[@"videoID"]];
-        MPMoviePlayerViewController *controller = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:url]];
-        [self presentMoviePlayerViewControllerAnimated:controller];
+        [self requestVideoUrl:_selectedDict[@"videoID"]];
     }
     else {
         [self performSegueWithIdentifier:@"WebViewController" sender:self];
 
     }
+
+}
+
+- (void)requestVideoUrl:(NSString *)videoId
+{
+    
+    NSString *url = [NSString stringWithFormat:@"http://app.dianjingshijie.com/flashinterface/getmovieurl.ashx?url=http://v.youku.com/v_show/id_%@.html&typeid=2",videoId];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"getNews success");
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        MPMoviePlayerViewController *controller = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:string]];
+        [self presentMoviePlayerViewControllerAnimated:controller];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure: %@", error);
+    }];
+    [operation start];
 
 }
 

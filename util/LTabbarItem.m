@@ -9,6 +9,10 @@
 #import "LTabbarItem.h"
 
 @implementation LTabbarItem
-
-
+- (void)layoutSublayersOfLayer:(CALayer *)layer
+{
+    for (CALayer *ll in layer.sublayers) {
+        ;
+    }
+}
 @end

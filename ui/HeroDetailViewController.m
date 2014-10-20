@@ -18,10 +18,13 @@
 
 #import "AFNetworking.h"
 #import "HeroPlayTableViewCell.h"
+#import "FirstTableViewCell.h"
+#import "UIImageView+WebCache.h"
 
 @interface HeroDetailViewController ()<UITableViewDataSource, UITableViewDelegate,HeroSecondTableViewCellDelegate,ContentTableViewCellDelegate,HeroSegmentControlDelegate>
 @property (nonatomic, copy) NSDictionary *dataDict;
 @property (nonatomic, copy) NSArray *playArray;
+@property (nonatomic, copy) NSArray *newsArray;
 
 @end
 
@@ -32,6 +35,8 @@
     NSInteger selectedNumber;
     HeroSegmentControl *control;
     HeroTableViewHeadView *headView;
+    UIButton *loadMoreButton;
+    BOOL isNeedLoadMore;
 }
 
 - (void)setHeroId:(NSString *)heroId
@@ -50,21 +55,42 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    isNeedLoadMore = YES;
+    
     [self requestDataDict];
+    [self requestNewsData:@""];
     headView = [[[NSBundle mainBundle] loadNibNamed:@"HeroTableViewHeadView" owner:self options:nil] lastObject];
-
+    
     
     selectedNumber = 0;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableHeaderView = [self tableViewHeadView];
     techNumber = 0;
-//    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [Default screenSize].width, 1)];
-//    footView.backgroundColor = [Default colorWithR:228 withG:228 withB:228];
-//    self.tableView.tableFooterView = footView;
-//    self.tableView.backgroundColor = [Default colorWithR:228 withG:228 withB:228];
+    //    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [Default screenSize].width, 1)];
+    //    footView.backgroundColor = [Default colorWithR:228 withG:228 withB:228];
+    //    self.tableView.tableFooterView = footView;
+    //    self.tableView.backgroundColor = [Default colorWithR:228 withG:228 withB:228];
+    
+    
+    loadMoreButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    loadMoreButton.frame = CGRectMake(0, 0, 320, 44);
+    [loadMoreButton setTitle:@"点击加载更多" forState:UIControlStateNormal];
+    loadMoreButton.titleLabel.font = [UIFont systemFontOfSize:13];
+    loadMoreButton.titleLabel.textColor = [UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0];
+    [loadMoreButton addTarget:self action:@selector(addMore) forControlEvents:UIControlEventTouchUpInside];
+    self.tableView.tableFooterView = nil;
+
+    
+    
     control = [[HeroSegmentControl alloc] initWithTitleArray:@[@"介绍",@"玩法",@"攻略"]];
     control.delegate = self;
+}
+
+- (void)addMore
+{
+    NSString *lastId = self.newsArray[([self.newsArray count] -1)][@"id"];
+    [self requestNewsData:lastId];
 }
 
 - (void)requestDataDict
@@ -87,8 +113,40 @@
         NSLog(@"Failure: %@", error);
     }];
     [operation start];
-
+    
 }
+
+
+
+- (void)requestNewsData:(NSString *)lastId
+{
+    NSString *url = [NSString stringWithFormat:@"%@?method=getHeroNews&heroid=%@&lastid=%@",[Default server],self.heroId,lastId];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"getHeroplay success");
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+            if (dict[@"data"]) {
+                self.newsArray = dict[@"data"][@"list"];
+            }
+            else {
+                self.newsArray = @[];
+            }
+            if ([self.newsArray count] < 20) {
+                isNeedLoadMore = NO;
+            }
+            else {
+                isNeedLoadMore = YES;
+            }
+        });
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure: %@", error);
+    }];
+    [operation start];
+    
+}
+
 
 - (UIView *)tableViewHeadView
 {
@@ -105,7 +163,9 @@
         return [self.playArray count];
         
     }
-
+    if (selectedNumber == 2) {
+        return [self.newsArray count];
+    }
     return 0;
 }
 
@@ -116,7 +176,11 @@
     }
     if (selectedNumber == 1) {
         return [self secondTableViewCellForRowAtIndexPath:indexPath];
-
+        
+    }
+    if (selectedNumber == 2) {
+        return [self thirdTableViewCellForRowAtIndexPath:indexPath];
+        
     }
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
     return cell;
@@ -146,17 +210,17 @@
         return cell;
     }
     if (indexPath.row == 4) {
-//        UITableViewCell *cell = [self contentCell];
+        //        UITableViewCell *cell = [self contentCell];
         NSString *string = _dataDict[@"exp_use"];
-//        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
-//        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-//        [paragraphStyle setLineSpacing:8];
-//        [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [string length])];
-//        
-//        
-//        cell.textLabel.attributedText = attributedString;
-//        [cell.textLabel sizeToFit];
-//        cell.textLabel.text = string;
+        //        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
+        //        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        //        [paragraphStyle setLineSpacing:8];
+        //        [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [string length])];
+        //
+        //
+        //        cell.textLabel.attributedText = attributedString;
+        //        [cell.textLabel sizeToFit];
+        //        cell.textLabel.text = string;
         ContentTableViewCell *cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exp_use"];
         cell.delegate = self;
         [cell insertIntoData:string];
@@ -169,13 +233,13 @@
         return cell;
     }
     if (indexPath.row == 6) {
-//        UITableViewCell *cell = [self contentCell];
+        //        UITableViewCell *cell = [self contentCell];
         NSString *string = _dataDict[@"exp_vs"];
-
+        
         ContentTableViewCell *cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"exp_vs"];
         cell.delegate = self;
         [cell insertIntoData:string];
-//        cell.textLabel.text = _dataDict[@"exp_vs"];
+        //        cell.textLabel.text = _dataDict[@"exp_vs"];
         return cell;
     }
     if (indexPath.row == 7) {
@@ -194,8 +258,8 @@
         return cell;
     }
     if (indexPath.row == 10) {
-//        UITableViewCell *cell = [self contentCell];
-//        cell.textLabel.text = _dataDict[@"story"];
+        //        UITableViewCell *cell = [self contentCell];
+        //        cell.textLabel.text = _dataDict[@"story"];
         
         NSString *string = _dataDict[@"story"];
         
@@ -204,8 +268,8 @@
         [cell insertIntoData:string];
         return cell;
     }
-
-
+    
+    
     
     
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
@@ -241,9 +305,39 @@
     HeroPlayTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:playCellName];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"HeroPlayTableViewCell" owner:self options:nil] lastObject];
-
+        
     }
     [cell insertIntoData:self.playArray[indexPath.row]];
+    return cell;
+}
+
+
+#pragma mark - thirdTableViewCell
+
+- (UITableViewCell *)thirdTableViewCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *playCellName = @"newsCellName";
+    FirstTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:playCellName];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"FirstTableViewCell" owner:self options:nil] lastObject];
+        
+    }
+    NSDictionary *dict = [self.newsArray objectAtIndex:indexPath.row];
+    if ([[dict objectForKey:@"image"] length] > 0) {
+        [cell haveImage:YES];
+        NSString *string = [dict objectForKey:@"image"];
+        [cell.smallImageView setImageWithURL:[NSURL URLWithString:[string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"small_image_loading"]];
+    }
+    else
+    {
+        [cell haveImage:NO];
+        cell.smallImageView.image = nil;
+    }
+    
+    cell.titleLabel.text = [dict objectForKey:@"title"];
+    cell.excerptLabel.text = [dict objectForKey:@"excerpt"];
+    
+    
     return cell;
 }
 
@@ -256,6 +350,9 @@
     }
     if (selectedNumber == 1) {
         return [self secondTableViewHeightForRowAtIndexPath:indexPath];
+    }
+    if (selectedNumber == 2) {
+        return [self thirdTableViewHeightForRowAtIndexPath:indexPath];
     }
     return 0;
 }
@@ -281,7 +378,7 @@
         ContentTableViewCell *cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
         ;
         return [cell.label insertIntoContentWithContent:string] + 20;
-//        return [self contentCellHeight:string];
+        //        return [self contentCellHeight:string];
     }
     if (indexPath.row == 5) {
         return 28;
@@ -291,7 +388,7 @@
         ContentTableViewCell *cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
         ;
         return [cell.label insertIntoContentWithContent:string] + 20;
-//        return [self contentCellHeight:string];
+        //        return [self contentCellHeight:string];
     }
     
     if (indexPath.row == 7) {
@@ -308,29 +405,29 @@
         ContentTableViewCell *cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
         ;
         return [cell.label insertIntoContentWithContent:string] + 20;
-//        return [self contentCellHeight:string];
+        //        return [self contentCellHeight:string];
     }
     return 0;
 }
 
 - (void)cellHeightCalculatedToRefreshCell
 {
-//    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:4 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    //    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:4 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (CGFloat)contentCellHeight:(NSString *)string
 {
     CGFloat heightString = 0;
     NSArray *array = [string componentsSeparatedByString:@"\r\n"];
-
+    
     
     for (NSString *ss in array) {
         CGSize size = [ss sizeWithFont:[UIFont systemFontOfSize:13] constrainedToSize:CGSizeMake(295, 5000)];
-//        CGSize size = [ss sizeWithAttributes:@{NSParagraphStyleAttributeName:paragraphStyle}];
-
+        //        CGSize size = [ss sizeWithAttributes:@{NSParagraphStyleAttributeName:paragraphStyle}];
+        
         heightString += size.height;
     }
-
+    
     return heightString;
 }
 #pragma mark - secondTableViewHeight
@@ -340,6 +437,16 @@
     HeroPlayTableViewCell *cell = (HeroPlayTableViewCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
     return [cell cellHeight] + 5;
 }
+
+#pragma mark - secondTableViewHeight
+
+- (CGFloat)thirdTableViewHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70.0;
+}
+
+
+#pragma mark -
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
@@ -353,6 +460,12 @@
 - (void)segmentControlSelectAtIndex:(NSInteger)index
 {
     selectedNumber = index;
+    if (selectedNumber == 2 && isNeedLoadMore) {
+        self.tableView.tableFooterView = loadMoreButton;
+    }
+    else {
+        self.tableView.tableFooterView = nil;
+    }
     [self.tableView reloadData];
 }
 
