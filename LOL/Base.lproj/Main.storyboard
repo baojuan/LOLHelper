@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="s8g-FT-35w">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -136,10 +137,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Mjf-G7-LYA" firstAttribute="top" secondItem="vbV-Ik-5jq" secondAttribute="bottom" constant="-64" id="05E-HL-IvQ"/>
+                            <constraint firstItem="Mjf-G7-LYA" firstAttribute="leading" secondItem="vbV-Ik-5jq" secondAttribute="leading" id="42X-gy-bRg"/>
                             <constraint firstItem="Mjf-G7-LYA" firstAttribute="leading" secondItem="hfa-RB-ROY" secondAttribute="leadingMargin" constant="-16" id="6Q3-fk-B3R"/>
+                            <constraint firstAttribute="width" secondItem="Mjf-G7-LYA" secondAttribute="width" id="Fw3-xi-ENI"/>
                             <constraint firstAttribute="bottom" secondItem="Mjf-G7-LYA" secondAttribute="bottom" id="Shd-GK-d2x"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Mjf-G7-LYA" secondAttribute="trailing" constant="-16" id="oMs-LR-H4y"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6Q3-fk-B3R"/>
+                                <exclude reference="oMs-LR-H4y"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="新闻详情" id="F7z-AG-Fmp"/>
                     <connections>

@@ -60,6 +60,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+    temporaryBarButtonItem.title = @"";
+    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+
+    
+    
     isNeedLoadMore = YES;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
