@@ -96,27 +96,27 @@
 
 - (void)refreshLastUpdatedDate {
 	
-	if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceLastUpdated:)]) {
-		
-		NSDate *date = [_delegate egoRefreshTableHeaderDataSourceLastUpdated:self];
-		
-		NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-		[formatter setAMSymbol:@"AM"];
-		[formatter setPMSymbol:@"PM"];
-		[formatter setDateFormat:@"MM/dd/yyyy hh:mm:ss"];
-		_lastUpdatedLabel.text = [NSString stringWithFormat:@"最近更新: %@", [formatter stringFromDate:date]];
-//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-//            [[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
-//            [[NSUserDefaults standardUserDefaults] synchronize];
-//        });
-		[formatter release];
-		
-	} else {
-		
-		_lastUpdatedLabel.text = nil;
-		
-	}
-
+//	if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceLastUpdated:)]) {
+//		
+//		NSDate *date = [_delegate egoRefreshTableHeaderDataSourceLastUpdated:self];
+//		
+//		NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//		[formatter setAMSymbol:@"AM"];
+//		[formatter setPMSymbol:@"PM"];
+//		[formatter setDateFormat:@"MM/dd/yyyy hh:mm:ss"];
+//		_lastUpdatedLabel.text = [NSString stringWithFormat:@"最近更新: %@", [formatter stringFromDate:date]];
+////        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+////            [[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
+////            [[NSUserDefaults standardUserDefaults] synchronize];
+////        });
+//		[formatter release];
+//		
+//	} else {
+//		
+//		_lastUpdatedLabel.text = nil;
+//		
+//	}
+//
 }
 
 - (void)setState:(EGOPullRefreshState)aState{

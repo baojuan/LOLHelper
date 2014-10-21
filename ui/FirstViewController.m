@@ -60,6 +60,8 @@
 
 - (UIView *)tableViewHeadView
 {
+    [self doneLoadingTableViewData];
+
     UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [Default screenSize].width, 152)];
     view.backgroundColor = [UIColor grayColor];
     view.userInteractionEnabled = YES;

@@ -41,7 +41,7 @@
     UIButton *loadMoreButton;
     BOOL isNeedLoadMore;
     NSDictionary *_selectedDict;
-
+    UILabel *noMoreLabel;
 }
 
 - (void)setHeroId:(NSString *)heroId
@@ -84,9 +84,19 @@
     loadMoreButton.frame = CGRectMake(0, 0, 320, 44);
     [loadMoreButton setTitle:@"点击加载更多" forState:UIControlStateNormal];
     loadMoreButton.titleLabel.font = [UIFont systemFontOfSize:13];
-    loadMoreButton.titleLabel.textColor = [UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0];
+    [loadMoreButton setTitleColor:[UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+    [loadMoreButton setTitleColor:[UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0] forState:UIControlStateSelected];
+
     [loadMoreButton addTarget:self action:@selector(addMore) forControlEvents:UIControlEventTouchUpInside];
-    self.tableView.tableFooterView = nil;
+    
+    noMoreLabel = [[UILabel alloc] initWithFrame:loadMoreButton.frame];
+    noMoreLabel.text = @"木有了...";
+    noMoreLabel.textAlignment = NSTextAlignmentCenter;
+    noMoreLabel.textColor = [UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0];
+    noMoreLabel.font = [UIFont systemFontOfSize:13];
+    noMoreLabel.userInteractionEnabled = NO;
+    
+    self.tableView.tableFooterView = noMoreLabel;
 
     
     
@@ -150,6 +160,7 @@
             }
         });
         loadMoreButton.selected = NO;
+        [self judgeTableViewFooterView];
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failure: %@", error);
@@ -512,13 +523,32 @@
 - (void)segmentControlSelectAtIndex:(NSInteger)index
 {
     selectedNumber = index;
-    if (selectedNumber == 2 && isNeedLoadMore) {
-        self.tableView.tableFooterView = loadMoreButton;
+    [self judgeTableViewFooterView];
+    [self.tableView reloadData];
+}
+
+- (void)judgeTableViewFooterView
+{
+    if (selectedNumber == 2 ) {
+        if (isNeedLoadMore) {
+            self.tableView.tableFooterView = loadMoreButton;
+
+        }
+        if ([self.newsArray count] == 0) {
+            self.tableView.tableFooterView = noMoreLabel;
+            
+        }
+        else {
+            self.tableView.tableFooterView = nil;
+            
+        }
+
     }
     else {
         self.tableView.tableFooterView = nil;
+        
     }
-    [self.tableView reloadData];
+
 }
 
 - (void)techButtonClick:(NSInteger)number
