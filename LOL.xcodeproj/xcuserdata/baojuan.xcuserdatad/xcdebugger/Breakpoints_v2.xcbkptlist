@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ui/SecondViewController.m"
-            timestampString = "435089242.394565"
+            timestampString = "435599708.815036"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "-getDataFromDataBase"
             landmarkType = "5">
          </BreakpointContent>

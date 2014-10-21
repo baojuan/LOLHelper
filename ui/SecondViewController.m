@@ -67,6 +67,10 @@
     
     appdelegate.secondViewController = self;
     
+    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+    temporaryBarButtonItem.title = @"";
+    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+    
     [self creatSelectView];
     [self setCollectionViewProperty];
 }

@@ -36,7 +36,7 @@
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextSetLineWidth(context, 2.0);
+    CGContextSetLineWidth(context, 1.0);
     CGContextSetLineCap(context, kCGLineCapRound);
     CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
     CGFloat startAngle = -M_PI/3;

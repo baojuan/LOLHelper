@@ -49,13 +49,15 @@
     _refreshHeaderView.backgroundColor = [UIColor clearColor];
     _refreshHeaderView.delegate = self;
     [self.view insertSubview:_refreshHeaderView belowSubview:self.tableView];
-    _loadMoreView = [[LoadMoreTableFooterView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    _loadMoreView = [[LoadMoreTableFooterView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 64 - 49, self.view.frame.size.width, 20)];
     _loadMoreView.delegate = self;
-    self.tableView.tableFooterView = _loadMoreView;
+    [self.view insertSubview:_loadMoreView belowSubview:self.tableView];
+
     [self getNews:self.lastId];
     [_refreshHeaderView refreshLastUpdatedDate];
-
-
+    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+    temporaryBarButtonItem.title = @"";
+    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
 }
 
 - (UIView *)tableViewHeadView

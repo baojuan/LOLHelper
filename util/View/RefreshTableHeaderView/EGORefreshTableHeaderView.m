@@ -60,7 +60,7 @@
 		
 		label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 28.0f - 5, self.frame.size.width, 20.0f)];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		label.font = [UIFont boldSystemFontOfSize:13.0f];
+		label.font = [UIFont boldSystemFontOfSize:14.0f];
 		label.textColor = TEXT_COLOR;
 		label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
 		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
@@ -70,7 +70,7 @@
 		_statusLabel=label;
 		[label release];
     
-		CircleView *circleView = [[CircleView alloc] initWithFrame:CGRectMake(10, 15, 35, 35)];
+		CircleView *circleView = [[CircleView alloc] initWithFrame:CGRectMake(80, 20, 28, 28)];
         _circleView = circleView;
         [self addSubview:circleView];
         [circleView release];

@@ -90,7 +90,9 @@
     NSMutableArray *tempArray = [NSMutableArray array];
     for (NSString * heroId in resultArray) {
         NSString *location = [heroIDList objectForKey:heroId];
-        [tempArray addObject:[heroList objectAtIndex:[location intValue]]];
+        if ([heroList count] > 0) {
+            [tempArray addObject:[heroList objectAtIndex:[location intValue]]];
+        }
     }
     dataArray = tempArray;
     if (self.secondViewController) {

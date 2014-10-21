@@ -37,6 +37,8 @@
     self.webView.delegate = self;
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_webUrl]]];
 
+    
+    
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
