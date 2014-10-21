@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="s8g-FT-35w">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -8,7 +9,7 @@
         <!--Item 2-->
         <scene sceneID="anE-RG-EMO">
             <objects>
-                <navigationController id="fju-ZH-D42" userLabel="Item 2" sceneMemberID="viewController">
+                <navigationController id="fju-ZH-D42" userLabel="Item 2" customClass="NavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="j3W-As-6Hx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="scD-Cv-vtA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -30,7 +31,7 @@
         <!--Item 1-->
         <scene sceneID="suG-Cb-Clf">
             <objects>
-                <navigationController id="lGv-br-jfP" userLabel="Item 1" sceneMemberID="viewController">
+                <navigationController id="lGv-br-jfP" userLabel="Item 1" customClass="NavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="8uY-Pm-Dij">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
@@ -250,10 +251,10 @@
             </objects>
             <point key="canvasLocation" x="1647" y="491"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tabbar View Controller-->
         <scene sceneID="Oa4-P1-wdL">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s8g-FT-35w" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s8g-FT-35w" customClass="TabbarViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="GwT-ZR-FrQ">
@@ -274,6 +275,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bCz-ao-KLM"/>
+        <segue reference="lpd-dj-U4S"/>
     </inferredMetricsTieBreakers>
 </document>

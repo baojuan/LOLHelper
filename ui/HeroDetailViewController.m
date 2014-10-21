@@ -347,9 +347,15 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"FirstTableViewCell" owner:self options:nil] lastObject];
         
     }
+    cell.videoImageView.hidden = YES;
+
     NSDictionary *dict = [self.newsArray objectAtIndex:indexPath.row];
     if ([[dict objectForKey:@"image"] length] > 0) {
         [cell haveImage:YES];
+        if ([dict[@"videoID"] length] > 0) {
+            cell.videoImageView.hidden = NO;
+        }
+        
         NSString *string = [dict objectForKey:@"image"];
         [cell.smallImageView setImageWithURL:[NSURL URLWithString:[string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"small_image_loading"]];
     }

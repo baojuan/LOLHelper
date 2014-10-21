@@ -70,7 +70,7 @@
 		_statusLabel=label;
 		[label release];
     
-		CircleView *circleView = [[CircleView alloc] initWithFrame:CGRectMake(10, 5, 35, 35)];
+		CircleView *circleView = [[CircleView alloc] initWithFrame:CGRectMake(10, 15, 35, 35)];
         _circleView = circleView;
         [self addSubview:circleView];
         [circleView release];

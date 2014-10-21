@@ -44,25 +44,23 @@
     
     UITabBarController *controller = (UITabBarController *)self.window.rootViewController;
     UITabBar *tabBar = controller.tabBar;
-    
+    tabBar.tintColor = [UIColor whiteColor];
     UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:1];
     UITabBarItem *tabBarItem0 = [tabBar.items objectAtIndex:0];
 
-    UIImage * selectedImage1 = [UIImage imageNamed:@"hero_press"];
-    UIImage * image1 = [[UIImage imageNamed:@"hero"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage * selectedImage1 = [UIImage imageNamed:@"hero_1"];
+    UIImage * image1 = [[UIImage imageNamed:@"hero_0"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     tabBarItem1.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
 //    tabBarItem1.title = @"英雄";
     [tabBarItem1 setFinishedSelectedImage:selectedImage1 withFinishedUnselectedImage:image1];
 
     
-    UIImage * selectedImage = [UIImage imageNamed:@"news_press"];
-    UIImage * image = [[UIImage imageNamed:@"news"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage * selectedImage = [UIImage imageNamed:@"news_1"];
+    UIImage * image = [[UIImage imageNamed:@"news_0"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     tabBarItem0.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
 
     
     [tabBarItem0 setFinishedSelectedImage:selectedImage withFinishedUnselectedImage:image];
-    
-
     
 //    tabBarItem0.title = @"新闻";
     

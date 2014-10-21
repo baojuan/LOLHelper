@@ -19,7 +19,6 @@
 		5BE2715719D17B600012F25C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE2715419D17B600012F25C /* Default@2x.png */; };
 		BF1FE78719CE86CE002B2C63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1FE78619CE86CE002B2C63 /* main.m */; };
 		BF1FE78A19CE86CE002B2C63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1FE78919CE86CE002B2C63 /* AppDelegate.m */; };
-		BF1FE79019CE86CE002B2C63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1FE78E19CE86CE002B2C63 /* Main.storyboard */; };
 		BF1FE79219CE86CE002B2C63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF1FE79119CE86CE002B2C63 /* Images.xcassets */; };
 		BF1FE79519CE86CE002B2C63 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1FE79319CE86CE002B2C63 /* LaunchScreen.xib */; };
 		BF1FE7A119CE86CE002B2C63 /* LOLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1FE7A019CE86CE002B2C63 /* LOLTests.m */; };
@@ -100,6 +99,15 @@
 		BF58952819EEC41C00112AFD /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58952419EEC41C00112AFD /* CircleView.m */; };
 		BF58952919EEC41C00112AFD /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58952619EEC41C00112AFD /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BF58952C19EED0C900112AFD /* LoadMoreTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58952B19EED0C900112AFD /* LoadMoreTableFooterView.m */; };
+		BF58952E19F6992A00112AFD /* video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58952D19F6992A00112AFD /* video@2x.png */; };
+		BF58953419F69E6C00112AFD /* hero_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58953019F69E6C00112AFD /* hero_0@2x.png */; };
+		BF58953519F69E6C00112AFD /* hero_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58953119F69E6C00112AFD /* hero_1@2x.png */; };
+		BF58953619F69E6C00112AFD /* news_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58953219F69E6C00112AFD /* news_0@2x.png */; };
+		BF58953719F69E6C00112AFD /* news_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF58953319F69E6C00112AFD /* news_1@2x.png */; };
+		BF58953C19F6AB3600112AFD /* UINavigationController+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58953B19F6AB3600112AFD /* UINavigationController+Orientation.m */; };
+		BF58954219F6ADFB00112AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF58954019F6ADFB00112AFD /* Main.storyboard */; };
+		BF58954519F6AE3600112AFD /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58954419F6AE3600112AFD /* NavigationViewController.m */; };
+		BF58954819F6B0D200112AFD /* TabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF58954719F6B0D200112AFD /* TabbarViewController.m */; };
 		BFFAF46C19D055A300934FF2 /* HeroSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFAF46B19D055A300934FF2 /* HeroSegmentControl.m */; };
 		BFFAF46F19D06FF100934FF2 /* HeroTableViewHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFAF46E19D06FF100934FF2 /* HeroTableViewHeadView.m */; };
 		BFFAF47119D0700700934FF2 /* HeroTableViewHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFAF47019D0700700934FF2 /* HeroTableViewHeadView.xib */; };
@@ -142,7 +150,6 @@
 		BF1FE78619CE86CE002B2C63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF1FE78819CE86CE002B2C63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF1FE78919CE86CE002B2C63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BF1FE78F19CE86CE002B2C63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF1FE79119CE86CE002B2C63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF1FE79419CE86CE002B2C63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BF1FE79A19CE86CE002B2C63 /* LOLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LOLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,6 +283,18 @@
 		BF58952619EEC41C00112AFD /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		BF58952A19EED0C900112AFD /* LoadMoreTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadMoreTableFooterView.h; sourceTree = "<group>"; };
 		BF58952B19EED0C900112AFD /* LoadMoreTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadMoreTableFooterView.m; sourceTree = "<group>"; };
+		BF58952D19F6992A00112AFD /* video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video@2x.png"; sourceTree = "<group>"; };
+		BF58953019F69E6C00112AFD /* hero_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hero_0@2x.png"; sourceTree = "<group>"; };
+		BF58953119F69E6C00112AFD /* hero_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hero_1@2x.png"; sourceTree = "<group>"; };
+		BF58953219F69E6C00112AFD /* news_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_0@2x.png"; sourceTree = "<group>"; };
+		BF58953319F69E6C00112AFD /* news_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_1@2x.png"; sourceTree = "<group>"; };
+		BF58953A19F6AB3600112AFD /* UINavigationController+Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Orientation.h"; sourceTree = "<group>"; };
+		BF58953B19F6AB3600112AFD /* UINavigationController+Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Orientation.m"; sourceTree = "<group>"; };
+		BF58954119F6ADFB00112AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF58954319F6AE3600112AFD /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		BF58954419F6AE3600112AFD /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		BF58954619F6B0D200112AFD /* TabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarViewController.h; sourceTree = "<group>"; };
+		BF58954719F6B0D200112AFD /* TabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarViewController.m; sourceTree = "<group>"; };
 		BFFAF46A19D055A300934FF2 /* HeroSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroSegmentControl.h; sourceTree = "<group>"; };
 		BFFAF46B19D055A300934FF2 /* HeroSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroSegmentControl.m; sourceTree = "<group>"; };
 		BFFAF46D19D06FF100934FF2 /* HeroTableViewHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroTableViewHeadView.h; sourceTree = "<group>"; };
@@ -359,7 +378,7 @@
 			children = (
 				BF1FE78819CE86CE002B2C63 /* AppDelegate.h */,
 				BF1FE78919CE86CE002B2C63 /* AppDelegate.m */,
-				BF1FE78E19CE86CE002B2C63 /* Main.storyboard */,
+				BF58954019F6ADFB00112AFD /* Main.storyboard */,
 				BF1FE79119CE86CE002B2C63 /* Images.xcassets */,
 				BF1FE79319CE86CE002B2C63 /* LaunchScreen.xib */,
 				BF1FE78419CE86CE002B2C63 /* Supporting Files */,
@@ -500,6 +519,7 @@
 		BF1FE80E19CE9076002B2C63 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				BF58952F19F69E6C00112AFD /* button */,
 				5BE2715219D17B600012F25C /* Default-568h@2x.png */,
 				5BE2715319D17B600012F25C /* Default.png */,
 				5BE2715419D17B600012F25C /* Default@2x.png */,
@@ -579,6 +599,10 @@
 				BFFAF46D19D06FF100934FF2 /* HeroTableViewHeadView.h */,
 				BFFAF46E19D06FF100934FF2 /* HeroTableViewHeadView.m */,
 				BFFAF47019D0700700934FF2 /* HeroTableViewHeadView.xib */,
+				BF58954319F6AE3600112AFD /* NavigationViewController.h */,
+				BF58954419F6AE3600112AFD /* NavigationViewController.m */,
+				BF58954619F6B0D200112AFD /* TabbarViewController.h */,
+				BF58954719F6B0D200112AFD /* TabbarViewController.m */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -606,6 +630,8 @@
 				BFFAF47719D0785B00934FF2 /* RuneLabel.h */,
 				BFFAF47819D0785B00934FF2 /* RuneLabel.m */,
 				5BE2711819D123DB0012F25C /* RuneLabel.xib */,
+				BF58953A19F6AB3600112AFD /* UINavigationController+Orientation.h */,
+				BF58953B19F6AB3600112AFD /* UINavigationController+Orientation.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -629,6 +655,7 @@
 		BF1FE87119CED5CD002B2C63 /* heroInfo */ = {
 			isa = PBXGroup;
 			children = (
+				BF58952D19F6992A00112AFD /* video@2x.png */,
 				BFFAF47A19D079E600934FF2 /* blue@2x.png */,
 				BFFAF47B19D079E600934FF2 /* green@2x.png */,
 				BFFAF47C19D079E600934FF2 /* red@2x.png */,
@@ -681,6 +708,17 @@
 				BF58952619EEC41C00112AFD /* EGORefreshTableHeaderView.m */,
 			);
 			path = RefreshTableHeaderView;
+			sourceTree = "<group>";
+		};
+		BF58952F19F69E6C00112AFD /* button */ = {
+			isa = PBXGroup;
+			children = (
+				BF58953019F69E6C00112AFD /* hero_0@2x.png */,
+				BF58953119F69E6C00112AFD /* hero_1@2x.png */,
+				BF58953219F69E6C00112AFD /* news_0@2x.png */,
+				BF58953319F69E6C00112AFD /* news_1@2x.png */,
+			);
+			path = button;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -765,9 +803,11 @@
 			files = (
 				5BE2711919D123DB0012F25C /* RuneLabel.xib in Resources */,
 				5B53B5DD19F50F5600312D7B /* MBProgressHUD.bundle in Resources */,
+				BF58953619F69E6C00112AFD /* news_0@2x.png in Resources */,
 				BF1FE82619CE9076002B2C63 /* hero@2x.png in Resources */,
 				BFFAF47619D0742300934FF2 /* HeroPlayTableViewCell.xib in Resources */,
 				BF1FE87519CED5CD002B2C63 /* coin@2x.png in Resources */,
+				BF58954219F6ADFB00112AFD /* Main.storyboard in Resources */,
 				BFFAF47D19D079E600934FF2 /* blue@2x.png in Resources */,
 				BF1FE82219CE9076002B2C63 /* btn_back@2x.png in Resources */,
 				5BE2715519D17B600012F25C /* Default-568h@2x.png in Resources */,
@@ -778,14 +818,16 @@
 				BF1FE82019CE9076002B2C63 /* cleanImage@2x.png in Resources */,
 				BF1FE82819CE9076002B2C63 /* news@2x.png in Resources */,
 				5BE2715719D17B600012F25C /* Default@2x.png in Resources */,
-				BF1FE79019CE86CE002B2C63 /* Main.storyboard in Resources */,
 				BF1FE79519CE86CE002B2C63 /* LaunchScreen.xib in Resources */,
 				BFFAF47F19D079E600934FF2 /* red@2x.png in Resources */,
 				BF1FE87719CED5CD002B2C63 /* search@2x.png in Resources */,
+				BF58953419F69E6C00112AFD /* hero_0@2x.png in Resources */,
 				BF1FE85519CE9F50002B2C63 /* FirstTableViewCell.xib in Resources */,
 				BF1FE79219CE86CE002B2C63 /* Images.xcassets in Resources */,
 				5BE2715619D17B600012F25C /* Default.png in Resources */,
+				BF58953519F69E6C00112AFD /* hero_1@2x.png in Resources */,
 				BF1FE88019CF08B9002B2C63 /* HeroSecondTableViewCell.xib in Resources */,
+				BF58952E19F6992A00112AFD /* video@2x.png in Resources */,
 				BF1FE82519CE9076002B2C63 /* underLine@2x.png in Resources */,
 				BF1FE82719CE9076002B2C63 /* hero_press@2x.png in Resources */,
 				BF1FE82919CE9076002B2C63 /* news_press@2x.png in Resources */,
@@ -794,6 +836,7 @@
 				BF1FE88D19CF2609002B2C63 /* AttributeTableViewCell.xib in Resources */,
 				BF1FE86519CEB30E002B2C63 /* SecondCollectionViewCell.xib in Resources */,
 				BF1FE87619CED5CD002B2C63 /* money@2x.png in Resources */,
+				BF58953719F69E6C00112AFD /* news_1@2x.png in Resources */,
 				BF1FE88519CF0A6F002B2C63 /* techBackground@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -823,6 +866,7 @@
 				5B53B5DC19F50F5600312D7B /* MBProgressHUD+Add.m in Sources */,
 				BF1FE7F919CE9068002B2C63 /* FMDatabase.m in Sources */,
 				BF1FE7F819CE9068002B2C63 /* DataBase.m in Sources */,
+				BF58954819F6B0D200112AFD /* TabbarViewController.m in Sources */,
 				BF58952919EEC41C00112AFD /* EGORefreshTableHeaderView.m in Sources */,
 				BF1FE86819CEB5CC002B2C63 /* SelectButton.m in Sources */,
 				BF1FE80919CE9068002B2C63 /* UIImage+MultiFormat.m in Sources */,
@@ -844,7 +888,9 @@
 				BF1FE7F619CE9068002B2C63 /* AFURLResponseSerialization.m in Sources */,
 				BF1FE78A19CE86CE002B2C63 /* AppDelegate.m in Sources */,
 				BF1FE7F119CE9068002B2C63 /* AFHTTPSessionManager.m in Sources */,
+				BF58954519F6AE3600112AFD /* NavigationViewController.m in Sources */,
 				5BE2711419CFD7620012F25C /* LineSpaceLabel.m in Sources */,
+				BF58953C19F6AB3600112AFD /* UINavigationController+Orientation.m in Sources */,
 				BF1FE7FF19CE9068002B2C63 /* NSData+ImageContentType.m in Sources */,
 				BF1FE7FD19CE9068002B2C63 /* FMResultSet.m in Sources */,
 				BFFAF46C19D055A300934FF2 /* HeroSegmentControl.m in Sources */,
@@ -894,20 +940,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BF1FE78E19CE86CE002B2C63 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BF1FE78F19CE86CE002B2C63 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BF1FE79319CE86CE002B2C63 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BF1FE79419CE86CE002B2C63 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		BF58954019F6ADFB00112AFD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF58954119F6ADFB00112AFD /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

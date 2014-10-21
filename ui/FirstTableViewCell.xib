@@ -19,6 +19,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.25098039220000001" green="0.81568627449999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video.png" id="XgG-zp-K7o">
+                        <rect key="frame" x="32" y="21" width="27" height="27"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QMj-mY-kNL">
                         <rect key="frame" x="90" y="10" width="220" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
@@ -39,10 +43,14 @@
                 <outlet property="excerptLabel" destination="oO8-sz-zjd" id="nB6-vf-XGg"/>
                 <outlet property="smallImageView" destination="FWT-GJ-sPi" id="k3g-S4-rdr"/>
                 <outlet property="titleLabel" destination="QMj-mY-kNL" id="4jk-6J-Chg"/>
+                <outlet property="videoImageView" destination="XgG-zp-K7o" id="UTF-jf-egx"/>
             </connections>
             <point key="canvasLocation" x="337" y="285"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="video.png" width="27" height="27"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -93,9 +93,15 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"FirstTableViewCell" owner:self options:nil] lastObject];
         cell.separatorInset = UIEdgeInsetsMake(0, 5, 0, 5);
     }
+    cell.videoImageView.hidden = YES;
+    
     NSDictionary *dict = [_dataArray objectAtIndex:indexPath.row];
     if ([[dict objectForKey:@"image"] length] > 0) {
         [cell haveImage:YES];
+        if ([dict[@"videoID"] length] > 0) {
+            cell.videoImageView.hidden = NO;
+        }
+        
         NSString *string = [dict objectForKey:@"image"];
         [cell.smallImageView setImageWithURL:[NSURL URLWithString:[string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] placeholderImage:[UIImage imageNamed:@"small_image_loading"]];
     }
@@ -283,6 +289,21 @@
 - (void)loadMoreTableFooterDidTriggerLoadMore:(LoadMoreTableFooterView *)view
 {
     [self getNews:_dataArray[([_dataArray count] - 1)][@"id"]];
+}
+
+#pragma mark -
+
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
 }
 
 
