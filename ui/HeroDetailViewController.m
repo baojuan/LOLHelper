@@ -21,7 +21,7 @@
 #import "FirstTableViewCell.h"
 #import "UIImageView+WebCache.h"
 #import <MediaPlayer/MediaPlayer.h>
-
+#import "WebViewController.h"
 
 
 @interface HeroDetailViewController ()<UITableViewDataSource, UITableViewDelegate,HeroSecondTableViewCellDelegate,ContentTableViewCellDelegate,HeroSegmentControlDelegate>
@@ -40,6 +40,8 @@
     HeroTableViewHeadView *headView;
     UIButton *loadMoreButton;
     BOOL isNeedLoadMore;
+    NSDictionary *_selectedDict;
+
 }
 
 - (void)setHeroId:(NSString *)heroId
@@ -59,7 +61,8 @@
     // Do any additional setup after loading the view.
     
     isNeedLoadMore = YES;
-    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
     [self requestDataDict];
     [self requestNewsData:@""];
     headView = [[[NSBundle mainBundle] loadNibNamed:@"HeroTableViewHeadView" owner:self options:nil] lastObject];
@@ -77,6 +80,7 @@
     
     
     loadMoreButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [loadMoreButton setTitle:@"加载中..." forState:UIControlStateSelected];
     loadMoreButton.frame = CGRectMake(0, 0, 320, 44);
     [loadMoreButton setTitle:@"点击加载更多" forState:UIControlStateNormal];
     loadMoreButton.titleLabel.font = [UIFont systemFontOfSize:13];
@@ -114,6 +118,7 @@
         });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failure: %@", error);
+        [Default showHubMessage:@"服务器错误"];
     }];
     [operation start];
     
@@ -123,6 +128,7 @@
 
 - (void)requestNewsData:(NSString *)lastId
 {
+    loadMoreButton.selected = YES;
     NSString *url = [NSString stringWithFormat:@"%@?method=getHeroNews&heroid=%@&lastid=%@",[Default server],self.heroId,lastId];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -143,8 +149,13 @@
                 isNeedLoadMore = YES;
             }
         });
+        loadMoreButton.selected = NO;
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failure: %@", error);
+        [Default showHubMessage:@"服务器错误"];
+        loadMoreButton.selected = NO;
+
     }];
     [operation start];
     
@@ -455,13 +466,18 @@
         if ([dict[@"videoID"] length] > 0) {
             [self requestVideoUrl:dict[@"videoID"]];
         }
+        else {
+            _selectedDict = [self.newsArray objectAtIndex:indexPath.row];
+            [self performSegueWithIdentifier:@"NewWebViewController" sender:self];
 
+        }
     }
 }
 
 - (void)requestVideoUrl:(NSString *)videoId
 {
-    
+    MBProgressHUD *hub = [Default showHubMessageManualHidden:@"视频准备中"];
+ 
     NSString *url = [NSString stringWithFormat:@"http://app.dianjingshijie.com/flashinterface/getmovieurl.ashx?url=http://v.youku.com/v_show/id_%@.html&typeid=2",videoId];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -470,8 +486,11 @@
         NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         MPMoviePlayerViewController *controller = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:string]];
         [self presentMoviePlayerViewControllerAnimated:controller];
+        [hub hide:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failure: %@", error);
+        [hub hide:YES];
+        [Default showHubMessage:@"获取视频url失败"];
     }];
     [operation start];
     
@@ -507,6 +526,17 @@
     techNumber = number;
     [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UIViewController *controller = segue.destinationViewController;
+    if ([controller isKindOfClass:[WebViewController class]]) {
+        ((WebViewController *) controller).webUrl = _selectedDict[@"url"];
+    }
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

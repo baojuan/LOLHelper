@@ -59,4 +59,29 @@
     return [Default systemMajorVersion] == 5;
 }
 
++ (void)showHubMessage:(NSString *)message hiddenAfterTime:(NSTimeInterval)time
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = message;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hide:YES afterDelay:time];
+}
+
++ (void)showHubMessage:(NSString *)message
+{
+    [self showHubMessage:message hiddenAfterTime:1];
+}
+
++ (MBProgressHUD *)showHubMessageManualHidden:(NSString *)message
+{
+    MBProgressHUD *hud = [[MBProgressHUD alloc]initWithView:[UIApplication sharedApplication].keyWindow];
+    
+    [[UIApplication sharedApplication].keyWindow addSubview:hud];
+    hud.labelText = message;//显示提示
+    [hud show:YES];
+    
+    return hud;
+}
+
 @end

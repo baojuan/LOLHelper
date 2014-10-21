@@ -7,6 +7,7 @@
 //
 
 #import "WebViewController.h"
+#import "Default.h"
 
 @interface WebViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -32,6 +33,7 @@
 {
 
     [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.webView.delegate = self;
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_webUrl]]];
 
@@ -49,6 +51,8 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     NSLog(@"加载失败，error:%@",error);
+    [Default showHubMessage:[NSString stringWithFormat:@"加载失败，error:%@",error]];
+
 }
 
 

@@ -68,6 +68,21 @@
     _statusLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_statusLabel];
 
+      /* Config Arrow Image */
+      _arrowImage = [CALayer layer];
+      _arrowImage.frame = CGRectMake(25.0f, midY - 20, 30.0f, 55.0f);
+      _arrowImage.contentsGravity = kCAGravityResizeAspect;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
+      if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+          _arrowImage.contentsScale = [[UIScreen mainScreen] scale];
+      }
+#endif
+      [[self layer] addSublayer:_arrowImage];
+      
+
+      
+      
+      
     /* Config activity indicator */
     _activityView =
         [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:DEFAULT_ACTIVITY_INDICATOR_STYLE];
@@ -107,6 +122,7 @@
       [CATransaction begin];
       [CATransaction setAnimationDuration:FLIP_ANIMATION_DURATION];
       _arrowImage.transform = CATransform3DIdentity;
+          _activityView.hidden = YES;
       [CATransaction commit];
 
       break;
@@ -120,6 +136,7 @@
 
       _statusLabel.text = @"上拉加载更多";
       [_activityView stopAnimating];
+        _activityView.hidden = YES;
       [CATransaction begin];
       [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
       _arrowImage.hidden = NO;
@@ -132,6 +149,7 @@
       [CATransaction begin];
       [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
       _arrowImage.hidden = YES;
+          _activityView.hidden = NO;
       [CATransaction commit];
       break;
     default:
@@ -193,7 +211,7 @@
 
 - (void)startAnimatingWithScrollView:(UIScrollView *)scrollView {
   isLoading = YES;
-  [self setState:EGOOPullRefreshPulling];
+  [self setState:EGOOPullRefreshLoading];
   [UIView beginAnimations:nil context:NULL];
   [UIView setAnimationDuration:0.2];
   UIEdgeInsets currentInsets = scrollView.contentInset;

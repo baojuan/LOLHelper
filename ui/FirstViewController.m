@@ -129,7 +129,7 @@
 
 - (void)requestVideoUrl:(NSString *)videoId
 {
-    
+    MBProgressHUD *hub = [Default showHubMessageManualHidden:@"视频准备中"];
     NSString *url = [NSString stringWithFormat:@"http://app.dianjingshijie.com/flashinterface/getmovieurl.ashx?url=http://v.youku.com/v_show/id_%@.html&typeid=2",videoId];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -138,8 +138,11 @@
         NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         MPMoviePlayerViewController *controller = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:string]];
         [self presentMoviePlayerViewControllerAnimated:controller];
+        [hub hide:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failure: %@", error);
+        [hub hide:YES];
+        [Default showHubMessage:@"服务器错误"];
     }];
     [operation start];
 
@@ -164,11 +167,17 @@
             self.tableView.tableHeaderView = [self tableViewHeadView];
             [self.tableView reloadData];
             self.lastId = _dataArray[([_dataArray count] - 1)][@"id"];
-            [self doneLoadingTableViewData];
         }
+        [self doneLoadingTableViewData];
+
         [_loadMoreView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failure: %@", error);
+        [Default showHubMessage:@"加载失败"];
+        [self doneLoadingTableViewData];
+
+        [_loadMoreView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+
     }];
     [operation start];
 }

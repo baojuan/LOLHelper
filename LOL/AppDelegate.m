@@ -27,11 +27,14 @@
     
     
     NSMutableArray *dataArray;
+    
+    MBProgressHUD *_hud;
 }
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         //GetData
         [self getHeroList];
@@ -63,8 +66,11 @@
     
 //    tabBarItem0.title = @"新闻";
     
-    
+    [self.window makeKeyAndVisible];
+    _hud = [Default showHubMessageManualHidden:@"加载中，请稍后..."];
+
     return YES;
+    
 }
 
 - (void)setSecondViewController:(SecondViewController *)secondViewController
@@ -129,10 +135,13 @@
                 self.secondViewController.dataArray = dataArray;
             }
             NSLog(@"你可以触摸屏幕了");
-            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_hud hide:YES];
+            });
         });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failure: %@", error);
+        _hud.hidden = YES;
     }];
     [operation start];
 }

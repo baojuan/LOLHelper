@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+
+
 @interface Default : NSObject
 
 + (NSString *)server;
@@ -27,4 +30,13 @@
 +(BOOL)isiOS7;
 +(BOOL)isiOS6;
 +(BOOL)isiOS5;
+
+
++ (void)showHubMessage:(NSString *)message;
+
++ (void)showHubMessage:(NSString *)message hiddenAfterTime:(NSTimeInterval)time;
+
+
++ (MBProgressHUD *)showHubMessageManualHidden:(NSString *)message;
+
 @end
