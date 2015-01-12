@@ -77,7 +77,7 @@
 
 - (void)bannerClick
 {
-    _selectedDict = @{@"url":_bannerImageUrl};
+    _selectedDict = @{@"url":_bannerUrl};
     [self performSegueWithIdentifier:@"WebViewController" sender:self];
 }
 
