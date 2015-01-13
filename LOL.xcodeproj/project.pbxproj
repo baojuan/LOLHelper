@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B20BFCF1A64EE2300B41332 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B20BFCC1A64EE2300B41332 /* libMobClickLibrary.a */; };
 		5B53B5DC19F50F5600312D7B /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B53B5D819F50F5600312D7B /* MBProgressHUD+Add.m */; };
 		5B53B5DD19F50F5600312D7B /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B53B5D919F50F5600312D7B /* MBProgressHUD.bundle */; };
 		5B53B5DE19F50F5600312D7B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B53B5DB19F50F5600312D7B /* MBProgressHUD.m */; };
@@ -126,6 +127,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B20BFCC1A64EE2300B41332 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		5B20BFCD1A64EE2300B41332 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		5B20BFCE1A64EE2300B41332 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		5B53B5D719F50F5600312D7B /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
 		5B53B5D819F50F5600312D7B /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
 		5B53B5D919F50F5600312D7B /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 				BF1FE83919CE91BD002B2C63 /* CoreGraphics.framework in Frameworks */,
 				BF1FE83719CE91B5002B2C63 /* UIKit.framework in Frameworks */,
 				BF1FE83519CE91B0002B2C63 /* Foundation.framework in Frameworks */,
+				5B20BFCF1A64EE2300B41332 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +334,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B20BFCB1A64EE2300B41332 /* UMAnalytics_Sdk_3.1.9 */ = {
+			isa = PBXGroup;
+			children = (
+				5B20BFCC1A64EE2300B41332 /* libMobClickLibrary.a */,
+				5B20BFCD1A64EE2300B41332 /* MobClick.h */,
+				5B20BFCE1A64EE2300B41332 /* MobClickSocialAnalytics.h */,
+			);
+			path = UMAnalytics_Sdk_3.1.9;
+			sourceTree = "<group>";
+		};
 		5B53B5D619F50F5600312D7B /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +421,7 @@
 		BF1FE7AA19CE9068002B2C63 /* sdk */ = {
 			isa = PBXGroup;
 			children = (
+				5B20BFCB1A64EE2300B41332 /* UMAnalytics_Sdk_3.1.9 */,
 				5B53B5D619F50F5600312D7B /* MBProgressHUD */,
 				BF1FE7AB19CE9068002B2C63 /* AFNetworking */,
 				BF1FE7BF19CE9068002B2C63 /* database */,
@@ -1023,6 +1039,10 @@
 				INFOPLIST_FILE = LOL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/sdk/UMAnalytics_Sdk_3.1.9",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1039,6 +1059,10 @@
 				INFOPLIST_FILE = LOL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/sdk/UMAnalytics_Sdk_3.1.9",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -14,7 +14,7 @@
 #import "DataBase.h"
 #import "AppDelegate.h"
 #import "HeroDetailViewController.h"
-
+#import "MobClick.h"
 
 @interface SecondViewController ()<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -195,6 +195,7 @@
 
 - (void)selectGroup1Action:(UIButton *)button
 {
+    
     if (button.selected) {
         return;
     }
@@ -204,7 +205,7 @@
     }
     button.selected = YES;
     [self getDataFromDataBase];
-    
+    [MobClick event:@"heroSearch" label:[NSString stringWithFormat:@"搜索条件1：%@，搜索条件2：%@",    buttonGroup1NowSelect.titleLabel.text, buttonGroup2NowSelect.titleLabel.text]];
     
 }
 
@@ -219,6 +220,7 @@
     }
     button.selected = YES;
     [self getDataFromDataBase];
+    [MobClick event:@"heroSearch" label:[NSString stringWithFormat:@"搜索条件1：%@，搜索条件2：%@",    buttonGroup1NowSelect.titleLabel.text, buttonGroup2NowSelect.titleLabel.text]];
 }
 
 - (void)getDataFromDataBase
@@ -279,6 +281,9 @@
     UIViewController *controller = segue.destinationViewController;
     if ([controller isKindOfClass:[HeroDetailViewController class]]) {
         ((HeroDetailViewController *) controller).heroId = _selectedDict[@"id"];
+        [MobClick event:@"heroDBClick" label:[NSString stringWithFormat:@"英雄id：%@，英雄name：%@",_selectedDict[@"id"],_selectedDict[@"title"]]];
+
+        
     }
 
 }

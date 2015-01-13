@@ -15,7 +15,7 @@
 #import "EGORefreshTableHeaderView.h"
 #import "LoadMoreTableFooterView.h"
 #import <MediaPlayer/MediaPlayer.h>
-
+#import "MobClick.h"
 
 
 @interface FirstViewController()<EGORefreshTableHeaderDelegate,LoadMoreTableFooterDelegate>
@@ -126,13 +126,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [MobClick event:@"newsClick" label:[NSString stringWithFormat:@"新闻id：%@，新闻title：%@",_selectedDict[@"id"],_selectedDict[@"title"]]];
+
     _selectedDict = [_dataArray objectAtIndex:indexPath.row];
     if ([_selectedDict[@"videoID"] length] > 0) {
         [self requestVideoUrl:_selectedDict[@"videoID"]];
     }
     else {
         [self performSegueWithIdentifier:@"WebViewController" sender:self];
-
     }
 
 }
